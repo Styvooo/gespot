@@ -5,7 +5,8 @@ import { el, mount, text } from 'redom'
 import { LayerSwitcher, URLHash, Layer, LayerGroup } from '@russss/maplibregl-layer-switcher'
 
 import $ from "jquery";
-import './bootstrap.ts';
+import 'bootstrap';
+import 'bootstrap-slider';
 
 import EditButton from './edit-control.js'
 import InfoPopup from './popup/infopopup.js'

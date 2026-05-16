@@ -30,7 +30,7 @@ const hidden_keys = [
 function fieldName(key: string) {
   key = key.replace('_', '-');
 
-  return t(`info.${key}`, titleCase(key));
+  return titleCase(t(`info.${key}`, key));
 }
 
 function fieldValue(key: string, value: any): any {

@@ -1,3 +1,5 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-slider/dist/css/bootstrap-slider.min.css';
 @import 'maplibre-gl/dist/maplibre-gl.css';
 
 :root {
@@ -55,24 +57,6 @@ body,
   background-color: #223;
 }
 
-header {
-  z-index: 2;
-  padding: 4px;
-  border-radius: 0px 0px 4px 0px;
-  border-right: 1px #eee solid;
-  border-bottom: 1px #eee solid;
-  background-color: rgba(255, 255, 255, 0.5);
-  top: 0px;
-  left: 0px;
-  right:0;
-  position: absolute;
-  display: block;
-  font-size: 13px;
-  width:auto;
-  text-align:right;
-  backdrop-filter: var(--oim-blur);
-}
-
 nav ul {
   font-size: 1.1em;
   list-style-type: none;
@@ -119,10 +103,6 @@ th {
   font-weight: bold;
 }
 
-.maplibregl-ctrl-group {
-  background-color: var(--oim-content-background);
-}
-
 .maplibregl-ctrl-top-left {
   /* Move control container down to avoid header */
   top: 100px;
@@ -133,6 +113,7 @@ th {
 }
 
 .maplibregl-ctrl-top-right {
+  /* Move control container down to avoid header */
   top: 120px !important;
 }
 .maplibregl-ctrl-top-right .maplibregl-ctrl {
@@ -215,6 +196,30 @@ canvas:focus {
 
 .layer-switcher-list h4 {
   border-bottom: 1px solid var(--oim-light-grey) !important;
+}
+
+/* Gespot specific */
+header {
+  z-index: 2;
+  padding: 4px;
+  border-radius: 0px 0px 4px 0px;
+  border-right: 1px #eee solid;
+  border-bottom: 1px #eee solid;
+  background-color: rgba(255, 255, 255, 0.5);
+  top: 0px;
+  left: 0px;
+  right:0;
+  position: absolute;
+  display: block;
+  font-size: 13px;
+  width:auto;
+  text-align:right;
+  backdrop-filter: var(--oim-blur);
+}
+
+header h1 {
+  font-size: 23px;
+  font-weight: 500;
 }
 
 .slider-selection {

@@ -35,6 +35,7 @@
     "name": "nom",
     "operator": "exploitant",
     "owner": "propriétaire",
+    "utility": "destination",
     "source": "source",
     "start-date": "date début",
     "substation": "rôle du poste",
@@ -62,6 +63,11 @@
       "outdoor": "exterieur",
       "indoor": "intérieur"
     },
+    "utility":{
+      "power":"électricité",
+      "telecom":"telecoms",
+      "street_lighting": "éclairage public"
+    },
     "material": {
       "wood": "bois",
       "metal": "métal",
@@ -73,6 +79,7 @@
     "substation": {
       "transmission": "transport",
       "distribution": "distribution",
+      "minor_distribution": "quartier",
       "traction": "traction",
       "converter": "conversion DC"
     },
@@ -144,10 +151,9 @@
   "layers": {
     "background": "Arrière-plan",
     "overlays": "Habillage",
-    "infrastructure": "Infrastructure",
-    "validation": "Validation",
     "power": "Electricité",
     "telecoms": "Télécoms",
+    "vegetation": "Végétation",
     "labels": "Labels",
     "title": "Couches"
   },

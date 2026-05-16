@@ -35,6 +35,7 @@
     "name": "name",
     "operator": "operator",
     "owner": "owner",
+    "utility": "sector",
     "source": "source",
     "start-date": "start date",
     "substation": "substation type",
@@ -62,6 +63,11 @@
       "outdoor": "outdoor",
       "indoor": "indoor"
     },
+    "utility":{
+      "power":"power",
+      "telecom":"telecoms",
+      "street_lighting": "street lighting"
+    },
     "material": {
       "wood": "wood",
       "metal": "steel",
@@ -73,6 +79,7 @@
     "substation": {
       "transmission": "transmission",
       "distribution": "distribution",
+      "minor_distribution": "minor distribution",
       "traction": "traction",
       "converter": "DC converter"
     },
@@ -144,10 +151,9 @@
   "layers": {
     "background": "Background",
     "overlays": "Overlays",
-    "infrastructure": "Infrastructure",
-    "validation": "Validation",
     "power": "Power",
     "telecoms": "Telecoms",
+    "vegetation": "Vegetation",
     "labels": "Labels",
     "title": "Layers"
   },

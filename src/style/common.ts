@@ -13,7 +13,6 @@ export function get_local_name(): ExpressionSpecification {
 }
 
 export const text_paint = {
-  'text-color': 'hsl(0, 0%, 10%)',
   'text-halo-width': 6,
   'text-halo-blur': 3,
   'text-halo-color': 'hsla(0, 0%, 98%, 0.9)'
