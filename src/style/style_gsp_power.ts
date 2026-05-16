@@ -63,16 +63,16 @@ export const warning_scale = {
 };
 
 // Power utility predicates
-const utilityPower_p: ExpressionSpecification = [
-  'all',
-  ['==', ['get', 'utility'], 'power'],
-];
+const utilityPower_p: ExpressionSpecification = ['==', ['get', 'utility'], 'power'];
 
 // Zoom level at which substation labels switch from centroid to outline placement.
-const substation_label_switch_zoom = 16
-const multi_voltage_min_zoom = 10
+const substation_label_switch_zoom = 16;
+const multi_voltage_min_zoom = 10;
 
-// === Frequency predicates
+// Insulation predicate
+const insulated_p: ExpressionSpecification = ['==', ['get', 'type'], 'cable'];
+
+// Frequency predicates
 const traction_freq_p: ExpressionSpecification = all(
   has('frequency'),
   ['!=', get('frequency'), ''],
@@ -268,57 +268,57 @@ export const warningWidth = function (warning: string): ExpressionSpecification{
   switch(warning){
     case "DMA":
       widthFunc = ['case',
+      insulated_p,
+      0.5,
       ['<', voltage, 1],
       ['*', circuits, 0.3],
-      [
-        'all',
+      all(
         ['<', voltage, 50],
         ['>=', voltage, 1]
-      ],
+      ),
       ['*', circuits, 2],
-      [
-        'all',
+      all(
         ['<', voltage, 250],
         ['>=', voltage, 50]
-      ],
+      ),
       ['*', circuits, ['+', ['/', voltage, 100], 3]],
       ['*', circuits, ['+', ['/', voltage, 100], 4]]];
       break;
   
     case "DLVR":
       widthFunc = ['case',
+      insulated_p,
+      0,
       ['<', voltage, 1],
       ['*', circuits, 0.3],
-      [
-        'all',
+      all(
         ['<', voltage, 50],
         ['>=', voltage, 1]
-      ],
+      ),
       ['*', circuits, 4],
-      [
-        'all',
+      all(
         ['<', voltage, 250],
         ['>=', voltage, 50]
-      ],
+      ),
       ['*', circuits, ['+', ['/', voltage, 100], 4]],
       ['*', circuits, ['+', ['/', voltage, 100], 5]]];
       break;
 
     case "DLVS":
       widthFunc = ['case',
+      insulated_p,
+      0,
       ['<', voltage, 1],
       ['*', circuits, 3],
-      [
-        'all',
+      all(
         ['<', voltage, 50],
         ['>=', voltage, 1]
-      ],
+      ),
       ['*', circuits, 5],
-      [
-        'all',
+      all(
         ['<', voltage, 250],
         ['>=', voltage, 50]
-      ],
+      ),
       ['*', circuits, ['+', ['/', voltage, 100], 6]],
       ['*', circuits, ['+', ['/', voltage, 100], 6]]];
       break;
@@ -560,136 +560,6 @@ export default function layers(): LayerSpecificationWithZIndex[] {
       }
     },
     {
-      zorder: 301,
-      id: 'power_tower',
-      type: 'symbol',
-      filter: all(utilityPower_p, ['==', get('type'), 'tower']),
-      source: 'gespot',
-      'source-layer': 'power_tower',
-      minzoom: 11,
-      layout: {
-        'icon-image': case_([[get('transition'), 'power_tower_transition']], 'power_tower'),
-        'icon-allow-overlap': true,
-        'icon-size': interpolate(
-          zoom,
-          [
-            [13, 0.5],
-            [21, 1.5]
-          ],
-          1.2
-        ),
-        'icon-rotate': ['-', ['get', 'angle'], 180],
-        'text-field': step(zoom, '', [[14, get('ref')]]),
-        'text-font': font,
-        'text-size': interpolate(zoom, [
-          [13, 8],
-          [21, 14]
-        ]),
-        'text-optional': true,
-        'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
-        'text-radial-offset': 1
-      },
-      paint: text_paint
-    },
-    {
-      zorder: 302,
-      id: 'power_terminal',
-      type: 'symbol',
-      filter: all(utilityPower_p, ['==', get('type'), 'terminal']),
-      source: 'gespot',
-      'source-layer': 'power_tower',
-      minzoom: 12,
-      layout: {
-        'icon-image': 'power_terminal',
-        'icon-allow-overlap': true,
-        'icon-size': interpolate(
-          zoom,
-          [
-            [13, 0.5],
-            [21, 1.5]
-          ],
-          1.2
-        )
-      }
-    },
-    {
-      zorder: 305,
-      id: 'power_pole_symbol',
-      type: 'symbol',
-      filter: all(utilityPower_p, ['==', get('type'), 'pole']),
-      source: 'gespot',
-      'source-layer': 'power_tower',
-      minzoom: 11,
-      maxzoom: 14.5,
-      paint: {
-        ...text_paint,
-        'icon-opacity': interpolate(zoom, [
-          [13, 0],
-          [13.5, 1]
-        ])
-      },
-      layout: {
-        'icon-image': case_([[get('transition'), 'power_pole_transition']], 'power_pole'),
-        'icon-allow-overlap': true,
-        'icon-size': 0.5,
-        'text-field': step(zoom, '', [
-          [15, concat(if_(has('name'), concat(get('name'), '\n'), ''), get('ref'))]
-        ]),
-        'text-font': font,
-        'text-size': interpolate(zoom, [
-          [13, 8],
-          [21, 14]
-        ]),
-        'text-offset': interpolate(zoom, [
-          [15, literal([0, 2.5])],
-          [21, literal([0, 4])]
-        ]),
-        'text-max-angle': 10,
-        'text-optional': true
-      }
-    },
-    {
-      zorder: 306,
-      id: 'power_pole_point',
-      type: 'circle',
-      source: 'gespot',
-      filter: all(utilityPower_p, ['==', ['get', 'type'], 'pole']),
-      minzoom: 14.5,
-      'source-layer': 'power_tower',
-      paint: {
-        'circle-radius': poleRadius_p,
-        'circle-color': scale_color("material", materialColor_scale),
-        'circle-stroke-color': powerColor,
-        'circle-stroke-width': ['interpolate', ['linear'], ['zoom'],
-            5, 0,
-            6, 0.1,
-            14, 0.5,
-            17, 3
-        ]
-      }
-    },
-    {
-      zorder:520,
-      id: 'power_pole_label',
-      type: 'symbol',
-      source: 'gespot',
-      filter: [
-        'all',
-        utilityPower_p,
-        ['==', ['get', 'type'], 'pole']
-      ],
-      minzoom: 14.5,
-      'source-layer': 'power_tower',
-      paint: powerTextPaint,
-      layout: {
-        'text-field': '{ref}',
-        'text-font':font,
-        'text-size': ['interpolate', ['linear'], ['zoom'], 11, 0, 12, 0, 12.01, 10],
-        'text-offset': [0, 1],
-        'text-anchor': 'top',
-      }
-    },
-    {
       zorder: 265,
       id: 'power_portal_node',
       type: 'symbol',
@@ -739,6 +609,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
           get('switch'),
           [
             ['disconnector', 'power_switch_disconnector'],
+            ['mechanical', 'power_switch_disconnector'],
             ['circuit_breaker', 'power_switch_circuit_breaker']
           ],
           'power_switch'
@@ -802,6 +673,129 @@ export default function layers(): LayerSpecificationWithZIndex[] {
         ]),
         'circle-opacity': power_opacity,
         'circle-stroke-opacity': power_opacity
+      }
+    },
+    {
+      zorder: 301,
+      id: 'power_tower',
+      type: 'symbol',
+      filter: all(utilityPower_p, ['==', get('type'), 'tower']),
+      source: 'gespot',
+      'source-layer': 'power_tower',
+      minzoom: 11,
+      layout: {
+        'icon-image': case_([[get('transition'), 'power_tower_transition']], 'power_tower'),
+        'icon-allow-overlap': true,
+        'icon-size': interpolate(
+          zoom,
+          [
+            [13, 0.5],
+            [21, 1.5]
+          ],
+          1.2
+        ),
+        'icon-rotate': ['-', ['get', 'angle'], 180],
+        'text-field': step(zoom, '', [[14, get('ref')]]),
+        'text-font': font,
+        'text-size': interpolate(zoom, [
+          [13, 8],
+          [21, 14]
+        ]),
+        'text-optional': true,
+        'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+        'text-radial-offset': 1
+      },
+      paint: text_paint
+    },
+    {
+      zorder: 302,
+      id: 'power_terminal',
+      type: 'symbol',
+      filter: all(utilityPower_p, ['==', get('type'), 'terminal']),
+      source: 'gespot',
+      'source-layer': 'power_tower',
+      minzoom: 12,
+      layout: {
+        'icon-image': 'power_terminal',
+        'icon-allow-overlap': true,
+        'icon-size': 0.5
+      }
+    },
+    {
+      zorder: 305,
+      id: 'power_pole_symbol',
+      type: 'symbol',
+      filter: all(utilityPower_p, ['==', get('type'), 'pole']),
+      source: 'gespot',
+      'source-layer': 'power_tower',
+      minzoom: 10.5,
+      maxzoom: 14.5,
+      paint: {
+        ...text_paint,
+        'icon-opacity': interpolate(zoom, [
+          [10.5, 0],
+          [11, 1]
+        ])
+      },
+      layout: {
+        'icon-image': case_([[get('transition'), 'power_pole_transition']], 'power_pole'),
+        'icon-allow-overlap': true,
+        'icon-size': 0.5,
+        'text-field': step(zoom, '', [
+          [15, concat(if_(has('name'), concat(get('name'), '\n'), ''), get('ref'))]
+        ]),
+        'text-font': font,
+        'text-size': interpolate(zoom, [
+          [13, 8],
+          [21, 14]
+        ]),
+        'text-offset': interpolate(zoom, [
+          [15, literal([0, 2.5])],
+          [21, literal([0, 4])]
+        ]),
+        'text-max-angle': 10,
+        'text-optional': true
+      }
+    },
+    {
+      zorder: 306,
+      id: 'power_pole_point',
+      type: 'circle',
+      source: 'gespot',
+      filter: all(utilityPower_p, ['==', ['get', 'type'], 'pole']),
+      minzoom: 14.5,
+      'source-layer': 'power_tower',
+      paint: {
+        'circle-radius': poleRadius_p,
+        'circle-color': scale_color("material", materialColor_scale),
+        'circle-stroke-color': powerColor,
+        'circle-stroke-width': ['interpolate', ['linear'], ['zoom'],
+            5, 0,
+            6, 0.1,
+            14, 0.5,
+            17, 3
+        ]
+      }
+    },
+    {
+      zorder:520,
+      id: 'power_pole_label',
+      type: 'symbol',
+      source: 'gespot',
+      filter: [
+        'all',
+        utilityPower_p,
+        ['==', ['get', 'type'], 'pole']
+      ],
+      minzoom: 14.5,
+      'source-layer': 'power_tower',
+      paint: powerTextPaint,
+      layout: {
+        'text-field': '{ref}',
+        'text-font':font,
+        'text-size': ['interpolate', ['linear'], ['zoom'], 11, 0, 12, 0, 12.01, 10],
+        'text-offset': [0, 1],
+        'text-anchor': 'top',
       }
     },
     {

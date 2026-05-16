@@ -141,6 +141,7 @@ th {
 
 a {
   color: var(--oim-text-color);
+  text-decoration: underline;
 }
 
 a:hover {
@@ -226,6 +227,9 @@ header h1 {
 	background: #81bfde !important;
 }
 
+#panel_warning {
+  width: 360px;
+}
 #panel_warningLink {
-  max-width: 100px;
+  max-width: 110px;
 }

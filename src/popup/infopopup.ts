@@ -278,6 +278,7 @@ class InfoPopup {
     }
 
     const maincontent = el(`div.${maincontentwidth}`)
+    mount(maincontent, attrs_table);
     mount(mainrow, maincontent);
 
     const links_container = el('div.infobox-external-links')
@@ -288,7 +289,7 @@ class InfoPopup {
     }
 
     mount(content, image_container)
-    mount(content, attrs_table)
+    mount(content, mainrow)
 
     if (feature.properties['osm_id']) {
       mount(

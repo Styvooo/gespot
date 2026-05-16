@@ -138,11 +138,13 @@ export default class Gespot {
     });
 
     document.getElementsByTagName("header")[0].insertAdjacentElement("beforeend", 
-      el('div.mx-5.float-right.text-center', [
-        el('div#panel_warningLink.d-inline-block.mr-3.align-text-top', 
+      el('div#panel_warning.mx-2.pt-1.pb-1.float-right.text-center.rounded-lg.alert-secondary', [
+        el('div#panel_warningLink.d-inline-block.mr-3.align-text-top.text-right', [
+          el('img', {"src":"img/iso_7010_w012.svg", "height":20}),
           el('a.text-danger', {"data-toggle":"modal", "data-target":"#electricityModal"}, 
-            text("Prévention du risque électrique"))), 
-        el('div.d-inline.align-text-top',warningArea_slider)
+            text("Prévention du risque électrique"))
+        ]), 
+        el('div.d-inline-block.align-text-top',warningArea_slider)
     ]));
 
     $("#panel_warningSlider").slider().on("slideStop", function(ui: any){
