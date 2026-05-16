@@ -86,7 +86,13 @@ export default function layers(): LayerSpecificationWithZIndex[] {
     minzoom: 11,
     maxzoom:14.5,
     'source-layer': 'utility_support',
-    paint: telecomTextPaint,
+    paint: {
+      ...telecomTextPaint,
+      'icon-opacity': interpolate(zoom, [
+        [10.5, 0],
+        [11.5, 1]
+      ])
+    },
     layout: {
       'icon-image': [
         'case',

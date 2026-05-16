@@ -3,7 +3,7 @@
 }
 
 .oim-popup {
-  max-width: min(350px, 70vw) !important;
+  max-width: min(500px, 70vw) !important;
 }
 
 .oim-popup .maplibregl-popup-content {

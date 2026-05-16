@@ -162,12 +162,12 @@
   },
   "layers": {
     "background": "Background",
-    "overlays": "Overlays",
+    "labels": "Labels",
+    "infrastructure": "Infrastructure",
     "power": "Power",
     "telecoms": "Telecoms",
     "natural": "Environment",
     "vegetation": "Vegetation",
-    "labels": "Labels",
     "title": "Layers"
   },
   "coordinates": "Coordinates",

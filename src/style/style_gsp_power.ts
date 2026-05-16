@@ -731,10 +731,10 @@ export default function layers(): LayerSpecificationWithZIndex[] {
       minzoom: 10.5,
       maxzoom: 14.5,
       paint: {
-        ...text_paint,
+        ...powerTextPaint,
         'icon-opacity': interpolate(zoom, [
           [10.5, 0],
-          [11, 1]
+          [11.5, 1]
         ])
       },
       layout: {
@@ -775,27 +775,6 @@ export default function layers(): LayerSpecificationWithZIndex[] {
             14, 0.5,
             17, 3
         ]
-      }
-    },
-    {
-      zorder:520,
-      id: 'power_pole_label',
-      type: 'symbol',
-      source: 'gespot',
-      filter: [
-        'all',
-        utilityPower_p,
-        ['==', ['get', 'type'], 'pole']
-      ],
-      minzoom: 14.5,
-      'source-layer': 'power_tower',
-      paint: powerTextPaint,
-      layout: {
-        'text-field': '{ref}',
-        'text-font':font,
-        'text-size': ['interpolate', ['linear'], ['zoom'], 11, 0, 12, 0, 12.01, 10],
-        'text-offset': [0, 1],
-        'text-anchor': 'top',
       }
     },
     {

@@ -246,7 +246,7 @@ class InfoPopup {
     setChildren(attrs_table, renderedProperties)
 
     const content = el('div.oim-popup-content', this.nameTags(feature))
-    const mainrow = el('div.row', {style: "max-width:370px;"})
+    const mainrow = el('div.row')
 
     if (feature.properties['voltage'] || feature.properties['voltage_primary']) {
       mount(content, this.voltageField(feature))

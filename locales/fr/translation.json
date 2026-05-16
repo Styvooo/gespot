@@ -162,12 +162,12 @@
     },
   "layers": {
     "background": "Arrière-plan",
-    "overlays": "Habillage",
+    "labels": "Labels",
+    "infrastructure": "Infrastructure",
     "power": "Electricité",
     "telecoms": "Télécoms",
     "natural": "Environement",
     "vegetation": "Végétation",
-    "labels": "Labels",
     "title": "Couches"
   },
   "coordinates": "Coordonnées",

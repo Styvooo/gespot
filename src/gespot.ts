@@ -60,9 +60,7 @@ export default class Gespot {
     const layer_switcher = new LayerSwitcher(
       [
         new LayerGroup(t('layers.background'), [
-          new Layer('A', t('openstreetmap'), 'osm_', 'background', true)
-        ]),
-        new LayerGroup(t('layers.overlays'), [
+          new Layer('A', t('openstreetmap'), 'osm_', 'background', true),
           new Layer('L', t('layers.labels'), 'label_', true)
         ]),
         new LayerGroup(t('layers.infrastructure'), [
@@ -139,8 +137,8 @@ export default class Gespot {
 
     document.getElementsByTagName("header")[0].insertAdjacentElement("beforeend", 
       el('div#panel_warning.mx-2.pt-1.pb-1.float-right.text-center.rounded-lg.alert-secondary', [
-        el('div#panel_warningLink.d-inline-block.mr-3.align-text-top.text-right', [
-          el('img', {"src":"img/iso_7010_w012.svg", "height":20}),
+        el('div#panel_warningLink.d-inline-block.mr-3.align-text-top.text-left', [
+          el('img', {"src":"img/iso_7010_w012.svg", "height":25}),
           el('a.text-danger', {"data-toggle":"modal", "data-target":"#electricityModal"}, 
             text("Prévention du risque électrique"))
         ]), 
