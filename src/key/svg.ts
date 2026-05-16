@@ -9,7 +9,7 @@ function getLayer(layers: { [key: string]: any }[], id: string) {
   return null
 }
 
-export function svgLine(colour: string, thickness: number, dash = '') {
+export function svgLine(colour: string | null, thickness: number, dash = '') {
   const height = 16
   const width = 30
 
@@ -21,7 +21,7 @@ export function svgLine(colour: string, thickness: number, dash = '') {
   })
 
   setStyle(line, {
-    stroke: colour,
+    stroke: colour || "#999999",
     'stroke-width': thickness,
     'stroke-dasharray': dash
   })
@@ -37,7 +37,7 @@ export function svgLineFromLayer(layers: { [key: string]: any }[], name: string,
   }
 }
 
-export function svgRect(colour: string, stroke = 'black', opacity = 1) {
+export function svgRect(colour: string | null, stroke = 'black', opacity = 1) {
   const height = 15
   const width = 30
 
@@ -47,13 +47,30 @@ export function svgRect(colour: string, stroke = 'black', opacity = 1) {
   })
 
   setStyle(rect, {
-    fill: colour,
+    fill: colour || "#999999",
     stroke: stroke,
     'stroke-width': 1,
     opacity: opacity
   })
 
   return svg('svg', rect, { height: height, width: width })
+}
+
+export function svgCircle(colour: string | null, stroke = 'black', opacity = 1, radius = 10, strokeWidth = 1) {
+  let shape = svg('circle', {
+    r: radius,
+    cx : radius,
+    cy : radius
+  });
+
+  setStyle(shape, {
+    fill: colour || "#999999",
+    stroke: stroke,
+    'stroke-width': strokeWidth,
+    opacity: opacity,
+  });
+
+  return svg('svg', shape, {height: 2 * radius, width: 2 * radius});
 }
 
 export function svgRectFromLayer(layers: { [key: string]: any }[], name: string) {

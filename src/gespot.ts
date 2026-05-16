@@ -113,7 +113,7 @@ export default class Gespot {
     map.addControl(new KeyControl(), 'top-right')
     map.addControl(layer_switcher, 'top-right')
     map.addControl(new EditButton(), 'bottom-right')
-    map.addControl(new OIMSearch(), 'top-left')
+
     new InfoPopup(
       getLayers().map((layer: { [x: string]: any }) => layer['id']),
       6

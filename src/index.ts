@@ -1,3 +1,5 @@
+import Gespot from './gespot'
+
 import './index.css'
 import './popup/popup.css'
 import i18next from 'i18next'
@@ -30,8 +32,6 @@ document.querySelectorAll('[data-i18n]').forEach((element) => {
     ;(element as HTMLElement).innerText = i18next.t(key)
   }
 })
-
-import Gespot from './gespot'
 
 export const gespot = new Gespot()
 

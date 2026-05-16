@@ -6,7 +6,7 @@ import { default as power_layers, voltage_scale, special_voltages } from '../sty
 import {mediumColor_scale as telecoMedium_scale} from '../style/style_gsp_telecoms.js'
 import {default as natural_layers} from '../style/style_gsp_natural.js'
 
-import { svgLine, svgLineFromLayer, svgRectFromLayer } from './svg.js'
+import { svgLine, svgCircle, svgLineFromLayer, svgRectFromLayer } from './svg.js'
 import './key.css'
 import { manifest } from 'virtual:render-svg'
 
@@ -117,7 +117,7 @@ class KeyControl implements IControl {
         label = t('values.material.'+label, label)
       }
 
-      rows.push([label, row[1]])
+      rows.push([label, svgCircle(row[1], 'grey', 1, 8, 0)])
     }
 
     rows.push([t('names.power.tower-pylon', 'Tower/Pylon'), await this.sprite('power_tower', 10)]);
@@ -162,8 +162,6 @@ class KeyControl implements IControl {
 
     rows = rows.map((row) => [row[0], svgLine(row[1], line_thickness)])
 
-    rows.push([t('names.power.line-reference', 'Line reference'), await this.sprite('line_ref')])
-
     const table = list('table', Tr)
     table.update(rows)
     return table
@@ -175,10 +173,6 @@ class KeyControl implements IControl {
 
     for (const row of telecoMedium_scale) {
       let label = row[0]?.toString()
-      let colour = row[1];
-      if (colour == null){
-        colour = "#696969";
-      }
 
       if (!label) {
         label = t('undefined', 'Indéfini')
@@ -186,7 +180,7 @@ class KeyControl implements IControl {
         label = t('values.telecom:medium.'+label, label)
       }
 
-      rows.push([label, svgLine(colour, 2, '6 3')])
+      rows.push([label, svgLine(row[1], 2, '6 3')])
     }
     
     rows.push([t('names.telecom.pole', 'Telecom pole'), await this.sprite('telecom_pole')]);

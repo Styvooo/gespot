@@ -32,59 +32,75 @@
     "place": "Place"
   },
   "info": {
-    "name": "Name",
-    "operator": "Operator",
-    "owner": "Owner",
-    "source": "Source",
-    "start-date": "Start date",
-    "substation": "Substation type",
-    "ref": "Reference",
-    "circuits": "Circuits",
-    "type": "Type",
-    "website": "Website",
-    "view-openstreetmap": "View on OpenStreetMap",
-    "usage": "Usage",
-    "location": "Location",
-    "design": "Design",
-    "design-ref": "Shape",
-    "material": "Material",
-    "line-attachment": "Line attachment",
-    "line-management": "Line management",
-    "line-arrangement": "Line arrangement"
+    "name": "name",
+    "operator": "operator",
+    "owner": "owner",
+    "source": "source",
+    "start-date": "start date",
+    "substation": "substation type",
+    "ref": "reference",
+    "circuits": "circuits",
+    "type": "type",
+    "website": "website",
+    "view-openstreetmap": "view on OpenStreetMap",
+    "usage": "usage",
+    "location": "location",
+    "design": "design",
+    "design-ref": "shape",
+    "material": "material",
+    "line-attachment": "line attachment",
+    "line-management": "line management",
+    "line-arrangement": "line arrangement"
   },
   "values":{
     "location": {
-      "underground": "Underground",
-      "underwater": "Underwater",
-      "overhead": "Overhead",
-      "roof": "Roof",
-      "surface": "Surface",
-      "outdoor": "Outdoor",
-      "indoor": "Indoor"
+      "underground": "underground",
+      "underwater": "underwater",
+      "overhead": "overhead",
+      "roof": "roof",
+      "surface": "surface",
+      "outdoor": "outdoor",
+      "indoor": "indoor"
     },
     "material": {
-      "wood": "Wood",
-      "metal": "Steel",
-      "steel": "Steel",
-      "concrete": "Concrete",
-      "composite": "Epoxy",
-      "epoxy": "Epoxy"
+      "wood": "wood",
+      "metal": "steel",
+      "steel": "steel",
+      "concrete": "concrete",
+      "composite": "epoxy",
+      "epoxy": "epoxy"
     },
     "substation": {
-      "transmission": "Transmission",
-      "distribution": "Distribution",
-      "traction": "Traction",
-      "converter": "DC Converter"
+      "transmission": "transmission",
+      "distribution": "distribution",
+      "traction": "traction",
+      "converter": "DC converter"
     },
     "telecom:medium":{
-      "copper": "Copper",
-      "fibre": "Fibre",
-      "coaxial": "Coaxial"
+      "copper": "copper",
+      "fibre": "fibre",
+      "coaxial": "coaxial"
+    },
+    "line-attachment": {
+      "anchor": "anchor",
+      "suspension": "suspension",
+      "pin": "pin",
+      "pulley": "pulley"
+    },
+    "line-management": {
+      "straight": "straight",
+      "branch": "branch",
+      "split": "split",
+      "transition": "transition",
+      "transpose": "transposing",
+      "cross": "cross",
+      "termination": "termination"
     }
   },
   "lifecycle":{
     "construction": "under construction",
-    "disused": "disused"
+    "disused": "disused",
+    "removed": "removed"
   },
   "nav": {
     "about": "About",

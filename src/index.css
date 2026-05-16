@@ -125,13 +125,16 @@ th {
 
 .maplibregl-ctrl-top-left {
   /* Move control container down to avoid header */
-  top: 60px;
+  top: 100px;
 }
 
 .maplibregl-ctrl-top-left .maplibregl-ctrl {
   margin: 0.5rem 0 0 0.5rem;
 }
 
+.maplibregl-ctrl-top-right {
+  top: 120px !important;
+}
 .maplibregl-ctrl-top-right .maplibregl-ctrl {
   margin: 0.5rem 0.5rem 0 0;
 }

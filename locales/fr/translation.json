@@ -32,59 +32,75 @@
     "place": "Lieu"
   },
   "info": {
-    "name": "Nom",
-    "operator": "Exploitant",
-    "owner": "Propriétaire",
-    "source": "Source",
-    "start-date": "Date début",
-    "substation": "Rôle du poste",
-    "ref": "Référence",
-    "circuits": "Circuits",
-    "type": "Type",
-    "website": "Site web",
-    "view-openstreetmap": "Voir sur OpenStreetMap",
-    "usage": "Usage",
-    "location": "Emplacment",
-    "design": "Famille",
-    "design-ref": "Silhouette",
-    "material": "Matériau",
-    "line-attachment": "Armement",
-    "line-management": "Topologie",
-    "line-arrangement": "Arrangement"
+    "name": "nom",
+    "operator": "exploitant",
+    "owner": "propriétaire",
+    "source": "source",
+    "start-date": "date début",
+    "substation": "rôle du poste",
+    "ref": "référence",
+    "circuits": "circuits",
+    "type": "type",
+    "website": "site web",
+    "view-openstreetmap": "voir sur OpenStreetMap",
+    "usage": "usage",
+    "location": "emplacment",
+    "design": "famille",
+    "design-ref": "silhouette",
+    "material": "matériau",
+    "line-attachment": "armement",
+    "line-management": "topologie",
+    "line-arrangement": "arrangement"
   },
   "values":{
     "location": {
-      "underground": "Souterrain",
-      "underwater": "Sous-marin",
-      "overhead": "Aérien",
-      "roof": "Toiture",
-      "surface": "Surface",
-      "outdoor": "Exterieur",
-      "indoor": "Intérieur"
+      "underground": "souterrain",
+      "underwater": "sous-marin",
+      "overhead": "aérien",
+      "roof": "toiture",
+      "surface": "surface",
+      "outdoor": "exterieur",
+      "indoor": "intérieur"
     },
     "material": {
-      "wood": "Bois",
-      "metal": "Métal",
-      "steel": "Acier",
-      "concrete": "Béton",
-      "composite": "Epoxy",
-      "epoxy": "Epoxy"
+      "wood": "bois",
+      "metal": "métal",
+      "steel": "acier",
+      "concrete": "béton",
+      "composite": "époxy",
+      "epoxy": "époxy"
     },
     "substation": {
-      "transmission": "Transport",
-      "distribution": "Distribution",
-      "traction": "Traction",
-      "converter": "Conversion DC"
+      "transmission": "transport",
+      "distribution": "distribution",
+      "traction": "traction",
+      "converter": "conversion DC"
     },
     "telecom:medium":{
-      "copper": "Cuivre",
-      "fibre": "Fibre",
-      "coaxial": "Coaxial"
+      "copper": "cuivre",
+      "fibre": "fibre",
+      "coaxial": "coaxial"
+    },
+    "line-attachment": {
+      "anchor": "ancrage",
+      "suspension": "suspension",
+      "pin": "rigide",
+      "pulley": "poulie"
+    },
+    "line-management": {
+      "straight": "continu",
+      "branch": "dérivation",
+      "split": "étoilement",
+      "transition": "émergence",
+      "transpose": "permutation",
+      "cross": "croisement",
+      "termination": "arrêt"
     }
   },
   "lifecycle":{
     "construction": "en construction",
-    "disused": "Abandonné"
+    "disused": "abandonné",
+    "removed": "supprime"
   },
   "nav": {
     "about": "A propos",

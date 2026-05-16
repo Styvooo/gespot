@@ -34,8 +34,7 @@ export default class OIMSearch implements IControl {
   constructor() {
     this.searchProviders = [
       new CoordinatesSearch(),
-      // OpenCage API key will only work on openinframap.org or localhost. Thanks to OpenCage for sponsoring!
-      new OpenCageSearch('oc_gs_a595f2059dee41d6b7073647aec5c303', i18next.language),
+      new OpenCageSearch("", i18next.language),
       new OIMSearchProvider(i18next.language)
     ]
 
