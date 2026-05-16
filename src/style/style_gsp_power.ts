@@ -566,7 +566,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
       filter: all(utilityPower_p, ['==', get('type'), 'tower']),
       source: 'gespot',
       'source-layer': 'power_tower',
-      minzoom: 10,
+      minzoom: 11,
       layout: {
         'icon-image': case_([[get('transition'), 'power_tower_transition']], 'power_tower'),
         'icon-allow-overlap': true,
@@ -631,14 +631,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
       layout: {
         'icon-image': case_([[get('transition'), 'power_pole_transition']], 'power_pole'),
         'icon-allow-overlap': true,
-        'icon-size': interpolate(
-          zoom,
-          [
-            [13, 0.1],
-            [20, 0.6]
-          ],
-          1.3
-        ),
+        'icon-size': 0.5,
         'text-field': step(zoom, '', [
           [15, concat(if_(has('name'), concat(get('name'), '\n'), ''), get('ref'))]
         ]),

@@ -10,9 +10,11 @@
       "transformer": "Transformateur",
       "tower": "Pylône électrique",
       "pole": "Poteau électrique",
+      "termainal": "Ancrage électrique",
       "substation": "Poste électrique",
       "cable": "Câble électrique",
       "line": "Power line",
+      "line-warning": "Danger électrique",
       "hvdc": "HVDC",
       "line-reference": "Référence",
       "tower-pylon": "Tour/Pylône",
@@ -21,7 +23,7 @@
     },
     "telecoms": {
       "pole": "Poteau télécom",
-      "communication-line": "Artère télécom",
+      "line": "Artère télécom",
       "tower-mast": "Pylône/mat"
     },
     "natural": {
@@ -49,11 +51,21 @@
     "design": "famille",
     "design-ref": "silhouette",
     "material": "matériau",
+    "height": "hauteur",
     "line-attachment": "armement",
     "line-management": "topologie",
     "line-arrangement": "arrangement"
   },
   "values":{
+    "type": {
+      "tower": "pylône",
+      "pole": "poteau",
+      "utility_pole": "poteau",
+      "terminal": "ancrage",
+      "minor_line": "ligne nue",
+      "line": "ligne nue",
+      "cable": "câble"
+    },
     "location": {
       "underground": "souterrain",
       "underwater": "sous-marin",
@@ -153,6 +165,7 @@
     "overlays": "Habillage",
     "power": "Electricité",
     "telecoms": "Télécoms",
+    "natural": "Environement",
     "vegetation": "Végétation",
     "labels": "Labels",
     "title": "Couches"

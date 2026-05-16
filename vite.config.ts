@@ -1,4 +1,5 @@
 /// <reference types="vitest/config" />
+import { dirname, resolve} from 'node:path'
 import { defineConfig } from 'vite'
 import { renderSVG } from 'vite-plugin-render-svg'
 import i18nextLoader from 'vite-plugin-i18next-loader'
@@ -9,6 +10,11 @@ export default defineConfig({
     outDir: './dist',
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
+      input: {
+        main: resolve (__dirname, 'index.html'),
+        about: resolve (__dirname, 'about-fr.html'),
+        legal: resolve (__dirname, 'legal.html'),
+      },
       output: {
         manualChunks: (id) => {
           if (id.includes('node_modules/maplibre-gl')) {

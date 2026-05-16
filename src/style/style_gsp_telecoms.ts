@@ -1,6 +1,24 @@
 import { ExpressionSpecification } from 'maplibre-gl'
 import { LayerSpecificationWithZIndex } from './types.js'
-import {scale_color, text_paint, operator_text, underground_p, poleRadius_p, materialColor_scale, lineOpacity_p, font} from './common.js';
+import {scale_color, text_paint, operator_text, underground_p, indoor_p, poleRadius_p, materialColor_scale, lineOpacity_p, font} from './common.js';
+import {
+  all,
+  has,
+  get,
+  interpolate,
+  coalesce,
+  match,
+  case_,
+  any,
+  zoom,
+  concat,
+  step,
+  round,
+  literal,
+  if_,
+  not,
+  rgb
+} from './stylehelpers.ts'
 
 const utilityTelecom_p: ExpressionSpecification = [
   'all',
@@ -49,7 +67,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
     id: 'telecoms_line',
     type: 'line',
     source: 'gespot',
-    filter: ['all', ['!', underground_p]],
+    filter: all(not(underground_p), not(indoor_p)),
     minzoom: 10,
     'source-layer': 'telecoms_communication_line',
     paint: {
@@ -64,10 +82,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
     id: 'telecoms_pole_symbol',
     type: 'symbol',
     source: 'gespot',
-    filter: [
-      'all',
-      utilityTelecom_p
-    ],
+    filter: utilityTelecom_p,
     minzoom: 11,
     maxzoom:14.5,
     'source-layer': 'utility_support',
@@ -99,10 +114,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
     id: 'telecoms_pole_point',
     type: 'circle',
     source: 'gespot',
-    filter: [
-      'all',
-      utilityTelecom_p
-    ],
+    filter: utilityTelecom_p,
     minzoom: 14.5,
     'source-layer': 'utility_support',
     paint: {
@@ -122,10 +134,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
     id: 'telecoms_pole_label',
     type: 'symbol',
     source: 'gespot',
-    filter: [
-      'all',
-      utilityTelecom_p
-    ],
+    filter: utilityTelecom_p,
     minzoom: 14.5,
     'source-layer': 'utility_support',
     paint: telecomTextPaint,
@@ -165,7 +174,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
     id: 'telecoms_line_label',
     type: 'symbol',
     source: 'gespot',
-    filter: ['all', ['!', underground_p]],
+    filter: all(not(underground_p), not(indoor_p)),
     minzoom: 9,
     'source-layer': 'telecoms_communication_line',
     paint: text_paint,

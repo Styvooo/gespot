@@ -67,8 +67,6 @@ export default class OIMSearchProvider implements ISearchProvider {
     let description = ''
     if (result.type === 'substation' && result.voltage) {
       description += `${t('names.power.substation')} (${formatVoltage(result.voltage / 1000)})`
-    } else if (result.type === 'plant' && result.output) {
-      description += `${t('names.power.plant')} (${formatPower(result.output / 1e6)})`
     } else {
       description += `${result.type}`
     }

@@ -10,9 +10,11 @@
       "transformer": "Transformer",
       "tower": "Power tower",
       "pole": "Power pole",
+      "termainal": "Power terminal",
       "substation": "Substation",
       "cable": "Power cable",
       "line": "Power line",
+      "line-warning": "Danger zone",
       "hvdc": "HVDC",
       "line-reference": "Line reference",
       "tower-pylon": "Tower/Pylon",
@@ -21,7 +23,7 @@
     },
     "telecoms": {
       "pole": "Telecom pole",
-      "communication-line": "Telecoms line",
+      "line": "Telecom line",
       "tower-mast": "Tower/Mast"
     },
     "natural": {
@@ -49,11 +51,21 @@
     "design": "design",
     "design-ref": "shape",
     "material": "material",
+    "height": "height",
     "line-attachment": "line attachment",
     "line-management": "line management",
     "line-arrangement": "line arrangement"
   },
   "values":{
+    "type": {
+      "tower": "tower",
+      "pole": "pole",
+      "utility_pole": "pole",
+      "terminal": "terminal",
+      "minor_line": "minor line",
+      "line": "line",
+      "cable": "cable"
+    },
     "location": {
       "underground": "underground",
       "underwater": "underwater",
@@ -153,6 +165,7 @@
     "overlays": "Overlays",
     "power": "Power",
     "telecoms": "Telecoms",
+    "natural": "Environment",
     "vegetation": "Vegetation",
     "labels": "Labels",
     "title": "Layers"
