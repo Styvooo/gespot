@@ -1,0 +1,145 @@
+{
+  "edit": {
+    "edit": "Editer",
+    "remote": "Editer avec un tiers (JOSM, etc.)",
+    "browser": "Editer en ligne (iD)",
+    "error": "Impossible de charger l'éditeur distant - vérifiez qu'il est en cours d'exécution et que le contrôle à distance est activé.\nErreur : "
+  },
+  "names": {
+    "power": {
+      "transformer": "Transformateur",
+      "tower": "Pylône électrique",
+      "pole": "Poteau électrique",
+      "substation": "Poste électrique",
+      "cable": "Câble électrique",
+      "line": "Power line",
+      "hvdc": "HVDC",
+      "line-reference": "Référence",
+      "tower-pylon": "Tour/Pylône",
+      "tower-transition": "Pylône d'émergence",
+      "pole-transition": "Poteau d'émergence"
+    },
+    "telecoms": {
+      "pole": "Poteau télécom",
+      "communication-line": "Artère télécom",
+      "tower-mast": "Pylône/mat"
+    },
+    "natural": {
+      "vegetation":"Végétation"
+    },
+    "cable": "Câble",
+    "cabinet": "Armoire",
+    "place": "Lieu"
+  },
+  "info": {
+    "name": "Nom",
+    "operator": "Exploitant",
+    "owner": "Propriétaire",
+    "source": "Source",
+    "start-date": "Date début",
+    "substation": "Rôle du poste",
+    "ref": "Référence",
+    "circuits": "Circuits",
+    "type": "Type",
+    "website": "Site web",
+    "view-openstreetmap": "Voir sur OpenStreetMap",
+    "usage": "Usage",
+    "location": "Emplacment",
+    "design": "Famille",
+    "design-ref": "Silhouette",
+    "material": "Matériau",
+    "line-attachment": "Armement",
+    "line-management": "Topologie",
+    "line-arrangement": "Arrangement"
+  },
+  "values":{
+    "location": {
+      "underground": "Souterrain",
+      "underwater": "Sous-marin",
+      "overhead": "Aérien",
+      "roof": "Toiture",
+      "surface": "Surface",
+      "outdoor": "Exterieur",
+      "indoor": "Intérieur"
+    },
+    "material": {
+      "wood": "Bois",
+      "metal": "Métal",
+      "steel": "Acier",
+      "concrete": "Béton",
+      "composite": "Epoxy",
+      "epoxy": "Epoxy"
+    },
+    "substation": {
+      "transmission": "Transport",
+      "distribution": "Distribution",
+      "traction": "Traction",
+      "converter": "Conversion DC"
+    },
+    "telecom:medium":{
+      "copper": "Cuivre",
+      "fibre": "Fibre",
+      "coaxial": "Coaxial"
+    }
+  },
+  "lifecycle":{
+    "construction": "en construction",
+    "disused": "Abandonné"
+  },
+  "nav": {
+    "about": "A propos",
+    "legal": "Mentions légales"
+  },
+  "units": {
+    "kV": "kV",
+    "Hz": "Hz",
+    "MW": "MW",
+    "DC": "DC",
+    "below_10kv": "< 10 kV",
+    "ge_kv": "≥ {{voltage}} kV",
+    "kW": "kW",
+    "V": "V"
+  },
+  "more_info": "Plus d'informations",
+  "wikipedia": "Wikipedia",
+  "wikimedia-commons": "Wikimedia Commons",
+  "wikidata": "Wikidata",
+  "key": {
+    "name": "Légende",
+    "infrastructure":{
+      "label": "Infrastructure"
+    },
+    "power":{
+      "label": "Electricité"
+    },
+    "telecom":{
+      "label": "Télécoms",
+      "path-medium": "{{medium}} path"
+    },
+    "natural":{
+      "label": "Environnement"
+    }
+  },
+  "other": "Other",
+  "warning": "Avertissement",
+  "warnings": {
+        "webgl": "<p>Votre navigateur peut rencontrer des problèmes de performance ou de fonctionnalité avec Open Infrastructure Map.</p><p><a href=\"http://webglreport.com\">WebGL</a> avec accélération matérielle est nécessaire pour que ce site fonctionne correctement.</p><p>Si votre navigateur prend en charge WebGL, vous devrez peut-être désactiver la protection contre le fingerprinting du navigateur pour ce site.</p>"
+    },
+  "layers": {
+    "background": "Arrière-plan",
+    "overlays": "Habillage",
+    "infrastructure": "Infrastructure",
+    "validation": "Validation",
+    "power": "Electricité",
+    "telecoms": "Télécoms",
+    "labels": "Labels",
+    "title": "Couches"
+  },
+  "coordinates": "Coordonnées",
+  "search": {
+        "clear": "Vider la recherche",
+        "no-results": "Aucun résultat trouvé"
+    },
+    "unknown": "Indéfini",
+    "openstreetmap": "OpenStreetMap"
+}

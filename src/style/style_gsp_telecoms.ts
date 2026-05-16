@@ -7,13 +7,13 @@ const utilityTelecom_p: ExpressionSpecification = [
   ['==', ['get', 'utility'], 'telecom'],
 ];
 
-const telecomColor = '#297f00';
+export const telecomColor = '#297f00';
 const telecomTextPaint = Object.assign({
   "text-color":telecomColor
 }, text_paint);
 
 // Colors
-const mediumColor_scale = [
+export const mediumColor_scale = [
   ['fibre', '#61637A'],
   ['copper', '#ff8900'],
   ['coaxial', '#136fff'],
@@ -42,7 +42,8 @@ const lineThickness_p: ExpressionSpecification = [
   ],
 ];
 
-const layers: LayerSpecificationWithZIndex[] = [
+export default function layers(): LayerSpecificationWithZIndex[] {
+  return [
   {
     zorder: 105,
     id: 'telecoms_line',
@@ -177,7 +178,5 @@ const layers: LayerSpecificationWithZIndex[] = [
       'text-offset': [0, 1],
       'text-max-angle': 10
     }
-  }
-];
-
-export {layers as telecomLayers, telecomColor, mediumColor_scale};
+  }];
+}

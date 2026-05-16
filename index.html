@@ -39,6 +39,44 @@
       </header>
       <div id="map"></div>
     </div>
+    <div class="modal fade" id="electricityModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="electricityLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="electricityLabel"><img src="img/frise.svg" alt="Logo" height="23"/>&nbsp;Prévention du risque électrique</h5>
+          </div>
+          <div class="modal-body">
+            <p>
+              Cette carte affiche différentes informations à propos des réseaux aériens, notamment électriques. Ces réseaux mettent en oeuvre des conducteurs électriques pour acheminer l'énergie et il est systématiquement dangereux de s'en approcher, même sans les toucher.
+              <br/>Cela est encore plus vrai lorsque ces conducteurs sont isolés par l'air ambiant. Reportez-vous <a href="https://tension-attention.fr/" target="_blank">aux outils mis à disposition par les gestionnaires de réseaux</a> pour en savoir plus.
+            </p>
+            <p>
+              En France, des distances d'approche sont prescrites par la norme NF C-18-510 pour qualifier les conditions acceptables dans lesquelles il est possible de stationner, notamment lors de situations de travail, à proximité des ouvrages électriques.
+              <ul>
+                <li>DLI - Distance Limite d'Investigation. Elle est de 50 mètres autour d'un conducteur quelle que soit sa tension et vise à matérialiser la zone pour laquelle une étude des risques électriques est nécessaire.</li>
+                <li>DLVS - Voisinage simple. Elle s'étale de 5 à 3 mètres selon le niveau de tension. Une habilitation est nécessaire pour s'approcher au-delà.</li>
+                <li>DLVR - Voisinage renforcé. Elle s'étale de 4 mètres à 30 centimètres. Des protections adaptées sont nécessaires pour s'approcher au-delà.</li>
+                <li>DMA - Distance minimale d'approche. Elle s'étale de 2.5 mètres à 30 centimètres. Des méthodes de travail spécifiques sont nécessaires au-delà.</li>
+              </ul>
+              Ces distances définissent l'apparition de zones au sein desquels différentes habilitations sont nécessaires, que Gespot ne documente pas.
+            </p>
+            <p>
+              Gespot tente d'extrapoler l'emprise de ces zones d'après les géométries génératrices connues de ces ouvrages et des attributs associés. Cet exercice peut souffrir de divers biais :
+              <ul>
+                <li>Un conducteur bien présent sur le terrain peut être inconnu ou mal positionné dans la base de données</li>
+                <li>Ses attributs peuvent être erronnés, notamment sa tension électrique d'exploitation ou la configuration de ses coducteurs</li>
+                <li>L'extrapolation de la zone peut être elle-même erronnée en raison d'éléments extérieurs inconnus du logiciel</li>
+              </ul>
+              Il est donc essentiel de savoir critiquer ce que l'outil affiche pour ne pas s'exposer à des risques plus importants qu'évalué.
+              <br/>Gespot est un démonstrateur, maintenu de bonne volonté mais sans prétendre à l'exactitude.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">J'ai compris</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="modal fade" id="disclaimerModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="false">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">

@@ -1,0 +1,145 @@
+{
+  "edit": {
+    "edit": "Edit",
+    "remote": "Edit with remote control (JOSM, etc)",
+    "browser": "Edit in browser (iD)",
+    "error": "Unable to load remote editor - make sure it's running and has remote control enabled.\nError: "
+  },
+  "names": {
+    "power": {
+      "transformer": "Transformer",
+      "tower": "Power tower",
+      "pole": "Power pole",
+      "substation": "Substation",
+      "cable": "Power cable",
+      "line": "Power line",
+      "hvdc": "HVDC",
+      "line-reference": "Line reference",
+      "tower-pylon": "Tower/Pylon",
+      "tower-transition": "Transition tower",
+      "pole-transition": "Transition pole"
+    },
+    "telecoms": {
+      "pole": "Telecom pole",
+      "communication-line": "Telecoms line",
+      "tower-mast": "Tower/Mast"
+    },
+    "natural": {
+      "vegetation":"Végétation"
+    },
+    "cable": "Cable",
+    "cabinet": "Cabinet",
+    "place": "Place"
+  },
+  "info": {
+    "name": "Name",
+    "operator": "Operator",
+    "owner": "Owner",
+    "source": "Source",
+    "start-date": "Start date",
+    "substation": "Substation type",
+    "ref": "Reference",
+    "circuits": "Circuits",
+    "type": "Type",
+    "website": "Website",
+    "view-openstreetmap": "View on OpenStreetMap",
+    "usage": "Usage",
+    "location": "Location",
+    "design": "Design",
+    "design-ref": "Shape",
+    "material": "Material",
+    "line-attachment": "Line attachment",
+    "line-management": "Line management",
+    "line-arrangement": "Line arrangement"
+  },
+  "values":{
+    "location": {
+      "underground": "Underground",
+      "underwater": "Underwater",
+      "overhead": "Overhead",
+      "roof": "Roof",
+      "surface": "Surface",
+      "outdoor": "Outdoor",
+      "indoor": "Indoor"
+    },
+    "material": {
+      "wood": "Wood",
+      "metal": "Steel",
+      "steel": "Steel",
+      "concrete": "Concrete",
+      "composite": "Epoxy",
+      "epoxy": "Epoxy"
+    },
+    "substation": {
+      "transmission": "Transmission",
+      "distribution": "Distribution",
+      "traction": "Traction",
+      "converter": "DC Converter"
+    },
+    "telecom:medium":{
+      "copper": "Copper",
+      "fibre": "Fibre",
+      "coaxial": "Coaxial"
+    }
+  },
+  "lifecycle":{
+    "construction": "under construction",
+    "disused": "disused"
+  },
+  "nav": {
+    "about": "About",
+    "legal": "Legal"
+  },
+  "units": {
+    "kV": "kV",
+    "Hz": "Hz",
+    "MW": "MW",
+    "DC": "DC",
+    "below_10kv": "< 10 kV",
+    "ge_kv": "≥ {{voltage}} kV",
+    "kW": "kW",
+    "V": "V"
+  },
+  "more_info": "More info",
+  "wikipedia": "Wikipedia",
+  "wikimedia-commons": "Wikimedia Commons",
+  "wikidata": "Wikidata",
+  "key": {
+    "name": "Key",
+    "infrastructure":{
+      "label": "Infrastructure"
+    },
+    "power":{
+      "label": "Power"
+    },
+    "telecom":{
+      "label": "Telecoms",
+      "path-medium": "{{medium}} path"
+    },
+    "natural":{
+      "label": "Environnement"
+    }
+  },
+  "other": "Other",
+  "warning": "Warning",
+  "warnings": {
+    "webgl": "<p>Your browser may have performance or functionality issues with Open Infrastructure Map.</p><p><a href=\"http://webglreport.com\">WebGL</a> with hardware acceleration is required for this site to perform well.</p><p>If your browser supports WebGL, you may need to disable browser fingerprinting protection for this site.</p>"
+  },
+  "layers": {
+    "background": "Background",
+    "overlays": "Overlays",
+    "infrastructure": "Infrastructure",
+    "validation": "Validation",
+    "power": "Power",
+    "telecoms": "Telecoms",
+    "labels": "Labels",
+    "title": "Layers"
+  },
+  "coordinates": "Coordinates",
+  "search": {
+    "clear": "Clear search",
+    "no-results": "No results found"
+  },
+  "unknown": "Unknown",
+  "openstreetmap": "OpenStreetMap"
+}

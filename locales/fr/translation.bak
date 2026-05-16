@@ -1,0 +1,165 @@
+{
+    "names": {
+        "power": {
+            "transformer": "Transformateur",
+            "tower": "Pylône électrique",
+            "line-reference": "Référence de la ligne",
+            "substation": "Sous-station",
+            "line": "Ligne électrique",
+            "tower-pylon": "Tour/Pylône",
+            "cable": "Câble",
+            "pole": "Poteau électrique",
+            "compensator": "Compensateur",
+            "reactor-series": "Inductance série",
+            "reactor-shunt": "Inductance shunt",
+            "switch-disconnector": "Sectionneur",
+            "switch-breaker": "Disjoncteur",
+            "capacitor-shunt": "Condensateur-shunt",
+            "filter": "Filtre",
+            "capacitor-series": "Condensateur en série",
+            "compensator-other": "Autre compensateur",
+            "synchronous-condenser": "Compensateur synchrone",
+            "converter": "Poste de conversion",
+            "transformer-3": "Transformateur (3 enroulements)",
+            "switch": "Appareil de connexion",
+            "hvdc": "CCHT",
+            "switch-other": "Autre interrupteur",
+            "statcom": "Compensateur statique d'énergie réactive",
+            "tower-transition": "Tour/pylône de transition",
+            "potential-transformer": "Transformateur de tension",
+            "pole-transition": "Emergence"
+        },
+        "telecoms": {
+            "cabinet": "Armoire télécommunication",
+            "data-center": "Data Center (bâtiment)",
+            "communication-line": "Ligne télécommunication",
+            "exchange": "Commutateur téléphonique",
+            "tower-mast": "Tour/pylône"
+        },
+        "natural": {
+            "vegetation":"Végétation"
+        },
+        "cable": "Câble",
+        "cabinet": "Armoire",
+        "place": "Lieu"
+    },
+    "edit": {
+        "edit": "Editer",
+        "remote": "Editer avec un tiers (JOSM, etc.)",
+        "browser": "Editer en ligne (iD)",
+        "error": "Impossible de charger l'éditeur distant - vérifiez qu'il est en cours d'exécution et que le contrôle à distance est activé.\nErreur : "
+    },
+    "nav": {
+        "about": "à propos",
+        "exports": "exports",
+        "stats": "statistiques"
+    },
+    "info": {
+        "view-openstreetmap": "Voir sur OpenStreetMap",
+        "website": "Site web",
+        "source": "Source",
+        "start-date": "Date de début",
+        "usage": "Utilisation",
+        "location": "Localisation",
+        "output": "Puissance",
+        "name": "Nom",
+        "operator": "Opérateur",
+        "type": "Type",
+        "substation-type": "Type de sous-station",
+        "reference": "Référence",
+        "generation-method": "Méthode de génération",
+        "circuits": "Circuits",
+        "substance": "Substance",
+        "material": "Matériau",
+        "design": "Design",
+        "line-attachment": "Armement aérien",
+        "line-management": "Topologie",
+        "transformer-type": "Type de transformateur"
+    },
+    "other": "Autre",
+    "units": {
+        "V": "V",
+        "kV": "kV",
+        "Hz": "Hz",
+        "MW": "MW",
+        "below_10kv": "< 10 kV",
+        "ge_kv": "≥ {{voltage}} kV",
+        "DC": "DC",
+        "kW": "kW"
+    },
+    "key": {
+        "name": "Key",
+        "infrastructure":{
+            "label": "Supports"
+        },
+        "power":{
+            "label": "Electricité"
+        },
+        "telecom":{
+            "label": "Télécoms",
+            "path-medium": "Artère {{medium}}"
+        },
+        "natural":{
+            "label": "Environnement"
+        }
+    },
+    "wikidata": "Wikidata",
+    "wikimedia-commons": "Wikimedia Commons",
+    "warning": "Avertissement",
+    "layers": {
+        "title": "Couches",
+        "telecoms": "Télécommunications",
+        "power": "Electricité",
+        "labels": "Etiquettes",
+        "background": "Arrière-plan",
+        "natural": "Milieu naturel",
+        "vegetation": "Végétation"
+    },
+    "more_info": "Plus d'infos",
+    "wikipedia": "Wikipedia",
+    "construction": "en construction",
+    "location": {
+        "underground": "Souterrain",
+        "underwater": "Sous-marin",
+        "roof": "Toit",
+        "indoor": "Intérieur",
+        "surface": "Surface",
+        "outdoor": "Extérieur",
+        "overhead": "Aérien"
+    },
+    "material": {
+        "wood": "Bois",
+        "metal": "Métal",
+        "steel": "Métal",
+        "concrete": "Béton",
+        "composite": "Epoxy",
+        "epoxy": "Epoxy"
+    },
+    "power": {
+        "substation-type": {
+            "distribution": "Distribution",
+            "traction": "Traction",
+            "transmission": "Transmission",
+            "converter": "Convertisseur DC"
+        }
+    },
+    "telecom": {
+        "medium": {
+            "copper": "Cuivre",
+            "fibre": "Fibre",
+            "coaxial": "Coaxial"
+        },
+        "path":"Artère"
+    },
+    "warnings": {
+        "webgl": "<p>Votre navigateur peut rencontrer des problèmes de performance ou de fonctionnalité avec Open Infrastructure Map.</p><p><a href=\"http://webglreport.com\">WebGL</a> avec accélération matérielle est nécessaire pour que ce site fonctionne correctement.</p><p>Si votre navigateur prend en charge WebGL, vous devrez peut-être désactiver la protection contre le fingerprinting du navigateur pour ce site.</p>"
+    },
+    "disused": "Inutilisé",
+    "coordinates": "Coordonnées",
+    "search": {
+        "clear": "Vider la recherche",
+        "no-results": "Aucun résultat trouvé"
+    },
+    "unknown": "Indéfini",
+    "openstreetmap": "OpenStreetMap"
+}
