@@ -78,23 +78,23 @@ export default function layers(): LayerSpecificationWithZIndex[] {
     }
   },
   {
-        zorder: 267,
-        id: 'telecoms_pole_transition',
-        type: 'symbol',
-        filter: all(utilityTelecom_p, ['==', ['get', 'type'], 'pole'], get('transition')),
-        source: 'gespot',
-        'source-layer': 'utility_support',
-        minzoom: 14.5,
-        layout: {
-          'icon-image': 'power_pole_transition',
-          'icon-offset': literal([-20, 0]),
-          'icon-size': interpolate(zoom, [
-            [14, 0.3],
-            [20, 1]
-          ]),
-          'icon-allow-overlap': true
-        }
-      },
+    zorder: 267,
+    id: 'telecoms_pole_transition',
+    type: 'symbol',
+    filter: all(utilityTelecom_p, ['==', ['get', 'type'], 'pole'], get('transition')),
+    source: 'gespot',
+    'source-layer': 'utility_support',
+    minzoom: 14.5,
+    layout: {
+      'icon-image': 'power_pole_transition',
+      'icon-offset': literal([-20, 0]),
+      'icon-size': interpolate(zoom, [
+        [14, 0.3],
+        [20, 1]
+      ]),
+      'icon-allow-overlap': true
+    }
+  },
   {
     zorder: 310,
     id: 'telecoms_pole_symbol',
