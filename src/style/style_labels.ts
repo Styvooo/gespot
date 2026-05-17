@@ -209,7 +209,7 @@ export default function layers(lang: string): LayerSpecificationWithZIndex[] {
       source: 'openmaptiles',
       'source-layer': 'place',
       maxzoom: 8,
-      filter: all(['==', '$type', 'Point'], ['==', 'class', 'country'], not(['has', 'iso_a2'])),
+      filter: all(['==', '$type', 'Point'], ['==', 'class', 'country'], ['!has', 'iso_a2']),
       layout: {
         'text-field': ['case', ['has', 'name:en'], ['get', 'name:en'], ['get', 'name:latin']],
         'text-font': ['Metropolis Light Italic', 'Noto Sans Regular Italic'],
