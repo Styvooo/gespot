@@ -1,10 +1,11 @@
-import Gespot from './gespot'
-
 import './index.css'
 import './popup/popup.css'
 import i18next from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import resources from 'virtual:i18next-loader'
+import $ from "jquery";
+
+import Gespot from './gespot'
 
 await i18next.use(LanguageDetector).init({
   fallbackLng: {

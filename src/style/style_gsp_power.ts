@@ -615,7 +615,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
           'power_switch'
         ),
         'icon-rotate': 90,
-        'icon-offset': match(get('type'), [['tower', literal([0, 30])]], literal([0, 20])),
+        'icon-offset': match(get('type'), [['tower', literal([0, -30])]], literal([0, -20])),
         'icon-size': interpolate(zoom, [
           [14, 0.3],
           [20, 1]
