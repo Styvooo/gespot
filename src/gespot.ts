@@ -46,6 +46,10 @@ export default class Gespot {
     return false
   }
 
+  saveElectricHazardStatus(status: String | null){
+    this.hazardElectric_status = status;
+  }
+
   constructor() {
     if (!this.isWebglSupported()) {
       const infobox = new WarningBox(t('warning', 'Warning'))
@@ -61,6 +65,7 @@ export default class Gespot {
   }
 
   init() {
+    const app = this;
     const layer_switcher = new LayerSwitcher(
       [
         new LayerGroup(t('layers.background'), [
@@ -161,24 +166,29 @@ export default class Gespot {
           map.setPaintProperty(layerName, "line-color", hazard_scale["DMA"]);
           map.setPaintProperty(layerName, "line-width", hazardWidth("DMA"));
           map.setLayoutProperty(layerName, 'visibility', 'visible');
+          app.saveElectricHazardStatus("DMA");
           break;
         case 2:
           map.setPaintProperty(layerName, "line-color", hazard_scale["DLVR"]);
           map.setPaintProperty(layerName, "line-width", hazardWidth("DLVR"));
           map.setLayoutProperty(layerName, 'visibility', 'visible');
+          app.saveElectricHazardStatus("DLVR");
           break;
         case 3:
           map.setPaintProperty(layerName, "line-color", hazard_scale["DLVS"]);
           map.setPaintProperty(layerName, "line-width", hazardWidth("DLVS"));
           map.setLayoutProperty(layerName, 'visibility', 'visible');
+          app.saveElectricHazardStatus("DLVS");
           break;
         case 4:
           map.setPaintProperty(layerName, "line-color", hazard_scale["DLI"]);
           map.setPaintProperty(layerName, "line-width", hazardWidth("DLI"));
           map.setLayoutProperty(layerName, 'visibility', 'visible');
+          app.saveElectricHazardStatus("DLI");
           break;
         default:
           map.setLayoutProperty(layerName, 'visibility', 'none');
+          app.saveElectricHazardStatus(null);
           break;
       }
     })

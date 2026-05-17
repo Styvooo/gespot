@@ -25,7 +25,7 @@ export class HazardPopup extends InfoPopup {
       .filter((x) => x !== null) as HTMLTableRowElement[]
     setChildren(attrs_table, renderedProperties)
 
-    const content = el('div.oim-popup-content', this.nameTags(feature))
+    const content = el('div.oim-popup-content')
 
     // Header
     const hazard_title = titleCase(t('hazard.electric.area', 'electric danger zone'), {sentenceCase: true})

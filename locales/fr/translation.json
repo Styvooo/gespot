@@ -43,7 +43,8 @@
     "utility": "destination",
     "source": "source",
     "start-date": "date début",
-    "substation": "rôle du poste",
+    "substation": "poste électrique",
+    "transformer": "transformateur",
     "ref": "référence",
     "circuits": "circuits",
     "type": "type",
@@ -104,6 +105,11 @@
       "minor_distribution": "quartier",
       "traction": "traction",
       "converter": "conversion DC"
+    },
+    "transformer": {
+      "distribution": "distribution",
+      "main": "principal",
+      "generator": "évacuation"
     },
     "switch":{
       "disconnector": "sectionneur",

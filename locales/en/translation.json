@@ -43,7 +43,8 @@
     "utility": "sector",
     "source": "source",
     "start-date": "start date",
-    "substation": "substation type",
+    "substation": "substation",
+    "transformer": "transformer",
     "ref": "reference",
     "circuits": "circuits",
     "type": "type",
@@ -104,6 +105,11 @@
       "minor_distribution": "minor distribution",
       "traction": "traction",
       "converter": "DC converter"
+    },
+    "transformer": {
+      "distribution": "distribution",
+      "main": "main",
+      "generator": "generation"
     },
     "switch":{
       "disconnector": "disconnector",
