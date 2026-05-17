@@ -16,12 +16,12 @@ export default function friendlyNames(): { [key: string]: string } {
     power_line: t('names.power.line', 'power line'),
     power_line_label: t('names.power.line', 'power line'),
     power_line_warning: t('names.power.line-warning', 'danger zone'),
-    telecoms_line: t('names.telecoms.line', 'telecom line'),
-    telecoms_line_label: t('names.telecoms.line', 'telecom line'),
-    telecoms_mast: t('names.telecoms.mast', 'telecom mast'),
-    telecoms_pole_symbol: t('names.telecoms.pole', 'telecom pole'),
-    telecoms_pole_point: t('names.telecoms.pole', 'telecom pole'),
-    telecoms_pole_label: t('names.telecoms.pole', 'telecom pole'),
+    telecoms_line: t('names.telecom.line', 'telecom line'),
+    telecoms_line_label: t('names.telecom.line', 'telecom line'),
+    telecoms_mast: t('names.telecom.mast', 'telecom mast'),
+    telecoms_pole_symbol: t('names.telecom.pole', 'telecom pole'),
+    telecoms_pole_point: t('names.telecom.pole', 'telecom pole'),
+    telecoms_pole_label: t('names.telecom.pole', 'telecom pole'),
     vegetation_forest: t('names.vegetation.forest', 'vegetation')
   }
 }

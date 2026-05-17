@@ -110,13 +110,13 @@ class KeyControl implements IControl {
   // Infrastructure
   async supportsTable() {
     const rows = [
-      [titleCase(t('names.tower', 'Tower/Pylon')), await this.sprite('power_tower', 15)],
+      [titleCase(t('names.tower', 'Tower/Pylon'), {sentenceCase: true}), await this.sprite('power_tower', 15)],
       [
-        titleCase(t('names.power.tower-transition', 'Transition tower')),
+        titleCase(t('names.power.tower-transition', 'Transition tower'), {sentenceCase: true}),
         await this.sprite('power_tower_transition', 15)
       ],
-      [titleCase(t('names.pole')), await this.sprite('pole', 15)],
-      [titleCase(t('names.power.pole-transition', 'Transition pole')), await this.sprite('power_pole_transition', 10)]
+      [titleCase(t('names.pole'), {sentenceCase: true}), await this.sprite('pole', 15)],
+      [titleCase(t('names.power.pole-transition', 'Transition pole'), {sentenceCase: true}), await this.sprite('power_pole_transition', 10)]
     ];
     
     for (const row of materialColor_scale) {
@@ -124,7 +124,7 @@ class KeyControl implements IControl {
       if (!label) {
         label = t('undefined', 'Unknown')
       } else {
-        label = titleCase(t('values.material.'+label, label))
+        label = titleCase(t('values.material.'+label, label), {sentenceCase: true})
       }
 
       rows.push([label, svgCircle(row[1], 'grey', 1, 8, 0)])
@@ -138,7 +138,7 @@ class KeyControl implements IControl {
   // Power
   async powerTable() {
     const rows = [
-      [titleCase(t('names.power.pole', 'Power pole')), await this.sprite('power_pole', 15)]
+      [titleCase(t('names.power.pole', 'Power pole'), {sentenceCase: true}), await this.sprite('power_pole', 15)]
     ];
 
     const table = list('table', Tr)
@@ -172,8 +172,8 @@ class KeyControl implements IControl {
   // Telecoms
   async telecomTable() {
     const rows = [
-      [titleCase(t('names.telecom.pole', 'Telecom pole')), await this.sprite('telecom_pole', 15)],
-      [titleCase(t('names.telecom.tower-mast', 'Tower/mast')), await this.sprite('comms_tower')]
+      [titleCase(t('names.telecom.pole', 'Telecom pole'), {sentenceCase: true}), await this.sprite('telecom_pole', 15)],
+      [titleCase(t('names.telecom.tower-mast', 'Tower/mast'), {sentenceCase: true}), await this.sprite('comms_tower')]
     ];
 
     for (const row of telecoMedium_scale) {
@@ -182,7 +182,7 @@ class KeyControl implements IControl {
       if (!label) {
         label = t('undefined', 'Indéfini')
       } else {
-        label = titleCase(t('values.telecom-medium.'+label, label))
+        label = titleCase(t('values.telecom-medium.'+label, label), {sentenceCase: true})
       }
 
       rows.push([label, svgLine(row[1], 2, '6 3')])
@@ -196,7 +196,7 @@ class KeyControl implements IControl {
   // Natural environement
   async naturalTable() {
     const rows = [
-      [titleCase(t('names.natural.vegetation', 'Vegetation')), svgRectFromLayer(natural_layers(), 'vegetation_forest')]
+      [titleCase(t('names.natural.vegetation', 'Vegetation'), {sentenceCase: true}), svgRectFromLayer(natural_layers(), 'vegetation_forest')]
     ]
     
     const table = list('table', Tr)

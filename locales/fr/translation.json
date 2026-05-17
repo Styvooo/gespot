@@ -17,7 +17,7 @@
       "line-warning": "danger électrique",
       "hvdc": "HVDC",
       "line-reference": "référence",
-      "tower-transition": "émergence syr pylône",
+      "tower-transition": "émergence sur pylône",
       "pole-transition": "émergence sur poteau",
       "pole-transformer": "poste sur poteau",
       "pole-switch": "organe de coupure"
@@ -50,6 +50,7 @@
     "website": "site web",
     "view-openstreetmap": "voir sur OpenStreetMap",
     "usage": "usage",
+    "remotely-controllable": "télécommande",
     "location": "emplacment",
     "design": "famille",
     "design-ref": "silhouette",

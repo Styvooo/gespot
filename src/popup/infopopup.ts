@@ -39,7 +39,7 @@ function fieldValue(key: string, value: any): any {
   }
 
   key = key.replace('_', '-').replace(':', '-');
-  return titleCase(t(`values.${key}.${value}`, value));
+  return t(`values.${key}.${value}`, value);
 }
 
 function truncateUrl(urlString: string, length: number): string {
@@ -205,10 +205,10 @@ class InfoPopup {
       title_text = this.friendlyRender(feature.layer['id'])
     }
 
-    let feature_title = el('h3', titleCase(title_text))
+    let feature_title = el('h3', titleCase(title_text, {sentenceCase: true}))
     const feature_iconpath = this.friendlyIcon(feature.layer['id'])
     if (feature_iconpath != null) {
-      feature_title = el('h3', el('img', { src: feature_iconpath, height: 35 }), titleCase(title_text))
+      feature_title = el('h3', el('img', { src: feature_iconpath, height: 35 }), titleCase(title_text, {sentenceCase: true}))
     }
 
     const container = el('div.oim-popup-header', feature_title)

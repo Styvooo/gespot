@@ -581,7 +581,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
       zorder: 266,
       id: 'power_pole_transformer',
       type: 'symbol',
-      filter: any(has('transformer_type'), has('substation')),
+      filter: any(has('transformer'), has('substation')),
       source: 'gespot',
       'source-layer': 'power_tower',
       minzoom: 14,
@@ -740,8 +740,8 @@ export default function layers(): LayerSpecificationWithZIndex[] {
         'icon-size': interpolate(
           zoom,
           [
-            [13, 0.5],
-            [21, 1.5]
+            [13, 1],
+            [21, 2]
           ],
           1.2
         )
