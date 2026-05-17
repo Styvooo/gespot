@@ -110,13 +110,13 @@ class KeyControl implements IControl {
   // Infrastructure
   async supportsTable() {
     const rows = [
-      [t('names.tower', 'Tower/Pylon'), await this.sprite('power_tower', 15)],
+      [titleCase(t('names.tower', 'Tower/Pylon')), await this.sprite('power_tower', 15)],
       [
-        t('names.power.tower-transition', 'Transition tower'),
+        titleCase(t('names.power.tower-transition', 'Transition tower')),
         await this.sprite('power_tower_transition', 15)
       ],
-      [t('names.pole'), await this.sprite('pole', 15)],
-      [t('names.power.pole-transition', 'Transition pole'), await this.sprite('power_pole_transition', 10)]
+      [titleCase(t('names.pole')), await this.sprite('pole', 15)],
+      [titleCase(t('names.power.pole-transition', 'Transition pole')), await this.sprite('power_pole_transition', 10)]
     ];
     
     for (const row of materialColor_scale) {
@@ -138,7 +138,7 @@ class KeyControl implements IControl {
   // Power
   async powerTable() {
     const rows = [
-      [t('names.power.pole', 'Power pole'), await this.sprite('power_pole', 15)]
+      [titleCase(t('names.power.pole', 'Power pole')), await this.sprite('power_pole', 15)]
     ];
 
     const table = list('table', Tr)
@@ -172,8 +172,8 @@ class KeyControl implements IControl {
   // Telecoms
   async telecomTable() {
     const rows = [
-      [t('names.telecom.pole', 'Telecom pole'), await this.sprite('telecom_pole', 15)],
-      [t('names.telecom.tower-mast', 'Tower/mast'), await this.sprite('comms_tower')]
+      [titleCase(t('names.telecom.pole', 'Telecom pole')), await this.sprite('telecom_pole', 15)],
+      [titleCase(t('names.telecom.tower-mast', 'Tower/mast')), await this.sprite('comms_tower')]
     ];
 
     for (const row of telecoMedium_scale) {
@@ -196,7 +196,7 @@ class KeyControl implements IControl {
   // Natural environement
   async naturalTable() {
     const rows = [
-      [t('names.natural.vegetation', 'Vegetation'), svgRectFromLayer(natural_layers(), 'vegetation_forest')]
+      [titleCase(t('names.natural.vegetation', 'Vegetation')), svgRectFromLayer(natural_layers(), 'vegetation_forest')]
     ]
     
     const table = list('table', Tr)

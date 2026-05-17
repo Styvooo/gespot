@@ -10,7 +10,7 @@
       "transformer": "transformer",
       "tower": "power tower",
       "pole": "power pole",
-      "termainal": "power terminal",
+      "terminal": "power terminal",
       "substation": "substation",
       "cable": "power cable",
       "line": "power line",

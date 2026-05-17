@@ -737,7 +737,14 @@ export default function layers(): LayerSpecificationWithZIndex[] {
       layout: {
         'icon-image': 'power_terminal',
         'icon-allow-overlap': true,
-        'icon-size': 10
+        'icon-size': interpolate(
+          zoom,
+          [
+            [13, 0.5],
+            [21, 1.5]
+          ],
+          1.2
+        )
       }
     },
     {

@@ -10,7 +10,7 @@
       "transformer": "transformateur",
       "tower": "pylône électrique",
       "pole": "poteau électrique",
-      "termainal": "ancrage électrique",
+      "terminal": "ancrage électrique",
       "substation": "poste électrique",
       "cable": "câble électrique",
       "line": "ligne électrique",

@@ -208,7 +208,7 @@ class InfoPopup {
     let feature_title = el('h3', titleCase(title_text))
     const feature_iconpath = this.friendlyIcon(feature.layer['id'])
     if (feature_iconpath != null) {
-      feature_title = el('h3', el('img', { src: feature_iconpath, height: 35 }), title_text)
+      feature_title = el('h3', el('img', { src: feature_iconpath, height: 35 }), titleCase(title_text))
     }
 
     const container = el('div.oim-popup-header', feature_title)
