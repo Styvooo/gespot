@@ -174,6 +174,14 @@ canvas:focus {
   background-color: #ddd;
 }
 
+.layer-switcher {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%3E%0A%20%20%3Cpath%20d%3D%22M0%200v4h4v-4h-4zm5%202v3h-3v1h4v-4h-1zm2%202v3h-3v1h4v-4h-1z%22%20/%3E%0A%3C/svg%3E);
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15px 15px;
+}
+
 .layer-switcher-list {
   min-width: 10vw !important;
   background-color: var(--oim-content-background) !important;
