@@ -35,6 +35,13 @@ table.item_info tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 
+.designicon img{
+  max-height:170px;
+}
+.designteaser {
+  max-width:250px;
+}
+
 .wikidata_image {
   display: block;
   border: 1px solid var(--oim-grey);
