@@ -7,6 +7,8 @@ export default function friendlyNames(): { [key: string]: string } {
     power_pole_symbol: t('names.power.pole','power pole'),
     power_pole_point: t('names.power.pole','power pole'),
     power_pole_label: t('names.power.pole','power pole'),
+    power_pole_transformer: t('names.power.pole-transformer','transformer on pole'),
+    power_pole_switch: t('names.power.pole-switch','switch on pole'),
     power_terminal: t('names.power.pole','power terminal'),
     power_substation: t('names.power.substation','power substation'),
     power_substation_point: t('names.power.substation','power substation'),

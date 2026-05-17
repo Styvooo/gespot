@@ -19,9 +19,11 @@
       "line-reference": "Line reference",
       "tower-pylon": "Tower/Pylon",
       "tower-transition": "Transition tower",
-      "pole-transition": "Transition pole"
+      "pole-transition": "Transition pole",
+      "pole-transformer": "Transformer on pole",
+      "pole-switch": "Switch on pole"
     },
-    "telecoms": {
+    "telecom": {
       "pole": "Telecom pole",
       "line": "Telecom line",
       "tower-mast": "Tower/Mast"
@@ -54,7 +56,8 @@
     "height": "height",
     "line-attachment": "line attachment",
     "line-management": "line management",
-    "line-arrangement": "line arrangement"
+    "line-arrangement": "line arrangement",
+    "capacity":"capacity"
   },
   "values":{
     "type": {
@@ -95,7 +98,7 @@
       "traction": "traction",
       "converter": "DC converter"
     },
-    "telecom:medium":{
+    "telecom-medium":{
       "copper": "copper",
       "fibre": "fibre",
       "coaxial": "coaxial"

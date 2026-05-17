@@ -237,3 +237,10 @@ header h1 {
 #panel_warningLink {
   max-width: 110px;
 }
+
+.designicon {
+  max-height:170px;
+}
+.designteaser {
+  max-width:310px;
+}

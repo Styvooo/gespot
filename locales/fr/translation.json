@@ -19,9 +19,11 @@
       "line-reference": "Référence",
       "tower-pylon": "Tour/Pylône",
       "tower-transition": "Pylône d'émergence",
-      "pole-transition": "Poteau d'émergence"
+      "pole-transition": "Poteau d'émergence",
+      "pole-transformer": "Poste sur poteau",
+      "pole-switch": "Interrupteur sur poteau"
     },
-    "telecoms": {
+    "telecom": {
       "pole": "Poteau télécom",
       "line": "Artère télécom",
       "tower-mast": "Pylône/mat"
@@ -54,7 +56,8 @@
     "height": "hauteur",
     "line-attachment": "armement",
     "line-management": "topologie",
-    "line-arrangement": "arrangement"
+    "line-arrangement": "arrangement",
+    "capacity":"capacité"
   },
   "values":{
     "type": {
@@ -95,7 +98,7 @@
       "traction": "traction",
       "converter": "conversion DC"
     },
-    "telecom:medium":{
+    "telecom-medium":{
       "copper": "cuivre",
       "fibre": "fibre",
       "coaxial": "coaxial"

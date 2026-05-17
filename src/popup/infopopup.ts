@@ -28,7 +28,7 @@ const hidden_keys = [
 ]
 
 function fieldName(key: string) {
-  key = key.replace('_', '-');
+  key = key.replace('_', '-').replace(':', '-');
 
   return titleCase(t(`info.${key}`, key));
 }
@@ -38,6 +38,7 @@ function fieldValue(key: string, value: any): any {
     return value
   }
 
+  key = key.replace('_', '-').replace(':', '-');
   return titleCase(t(`values.${key}.${value}`, value));
 }
 
@@ -255,18 +256,15 @@ class InfoPopup {
     // Design icon
     let featureRef = feature.layer['id'].replace('_point', '').replace('_symbol', '').replace('_label', '');
     let feature_iconpath;
-    let maincontentwidth = "col-12";
     if (feature.properties['design_ref']){
       feature_iconpath = this.designIcon(featureRef+'_'+feature.properties['design_ref'])
     }else if (feature.properties['line_attachment'] && feature.properties['line_arrangement']){
       feature_iconpath = this.designIcon(featureRef+'_'+feature.properties['line_attachment']+'_'+feature.properties['line_arrangement'])
     }
     if (feature_iconpath != null) {
-      mount(mainrow, el('div.col-6', el('img.designicon', { src: feature_iconpath })))
-      maincontentwidth = "col-6";
+      mount(mainrow, el('div.designicon', el('img', { src: feature_iconpath })))
     }else if(featureRef == "power_tower"){
-      maincontentwidth = "col-5";
-      let teaser = el('div.col-7');
+      let teaser = el('div.designteaser');
       mount(teaser, el('h6', 'Le matériau ou la silhouette de ce support sont encore inconnus'))
       mount(teaser, el('span', 'Envie de contribuer ?'))
       mount(teaser, el('br'))
@@ -277,7 +275,7 @@ class InfoPopup {
       mount(mainrow, teaser);
     }
 
-    const maincontent = el(`div.${maincontentwidth}`)
+    const maincontent = el(`div`)
     mount(maincontent, attrs_table);
     mount(mainrow, maincontent);
 

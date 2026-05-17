@@ -182,7 +182,7 @@ class KeyControl implements IControl {
       if (!label) {
         label = t('undefined', 'Indéfini')
       } else {
-        label = titleCase(t('values.telecom:medium.'+label, label))
+        label = titleCase(t('values.telecom-medium.'+label, label))
       }
 
       rows.push([label, svgLine(row[1], 2, '6 3')])
