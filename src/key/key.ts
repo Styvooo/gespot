@@ -173,7 +173,7 @@ class KeyControl implements IControl {
   async telecomTable() {
     const rows = [
       [titleCase(t('names.telecom.pole', 'Telecom pole'), {sentenceCase: true}), await this.sprite('telecom_pole', 15)],
-      [titleCase(t('names.telecom.tower-mast', 'Tower/mast'), {sentenceCase: true}), await this.sprite('comms_tower')]
+      [titleCase(t('names.telecom.mast', 'Tower/mast'), {sentenceCase: true}), await this.sprite('comms_tower')]
     ];
 
     for (const row of telecoMedium_scale) {

@@ -25,7 +25,7 @@
     "telecom": {
       "pole": "poteau télécom",
       "line": "artère télécom",
-      "tower-mast": "pylône/mat radio"
+      "mast": "pylône/mat radio"
     },
     "natural": {
       "vegetation":"végétation"
@@ -80,6 +80,9 @@
       "surface": "surface",
       "outdoor": "exterieur",
       "indoor": "intérieur"
+    },
+    "structure": {
+      "lattice": "trellis"
     },
     "utility":{
       "power":"électricité",

@@ -25,7 +25,7 @@
     "telecom": {
       "pole": "telecom pole",
       "line": "telecom line",
-      "tower-mast": "radio tower/mast"
+      "mast": "radio tower/mast"
     },
     "natural": {
       "vegetation":"végétation"
@@ -80,6 +80,9 @@
       "surface": "surface",
       "outdoor": "outdoor",
       "indoor": "indoor"
+    },
+    "structure": {
+      "lattice": "lattice"
     },
     "utility":{
       "power":"power",

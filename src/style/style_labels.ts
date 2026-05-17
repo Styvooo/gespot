@@ -32,7 +32,7 @@ export default function layers(lang: string): LayerSpecificationWithZIndex[] {
   return [
     {
       zorder: 105,
-      id: 'place_suburb',
+      id: 'label_suburb',
       type: 'symbol',
       source: 'openmaptiles',
       'source-layer': 'place',
@@ -56,7 +56,7 @@ export default function layers(lang: string): LayerSpecificationWithZIndex[] {
     },
     {
       zorder: 106,
-      id: 'place_village',
+      id: 'label_village',
       type: 'symbol',
       source: 'openmaptiles',
       'source-layer': 'place',
@@ -80,7 +80,7 @@ export default function layers(lang: string): LayerSpecificationWithZIndex[] {
     },
     {
       zorder: 107,
-      id: 'place_town',
+      id: 'label_town',
       type: 'symbol',
       source: 'openmaptiles',
       'source-layer': 'place',
@@ -104,7 +104,7 @@ export default function layers(lang: string): LayerSpecificationWithZIndex[] {
     },
     {
       zorder: 108,
-      id: 'place_city',
+      id: 'label_city',
       type: 'symbol',
       source: 'openmaptiles',
       'source-layer': 'place',
@@ -132,7 +132,7 @@ export default function layers(lang: string): LayerSpecificationWithZIndex[] {
     },
     {
       zorder: 109,
-      id: 'place_capital',
+      id: 'label_capital',
       type: 'symbol',
       source: 'openmaptiles',
       'source-layer': 'place',
@@ -157,7 +157,7 @@ export default function layers(lang: string): LayerSpecificationWithZIndex[] {
     },
     {
       zorder: 110,
-      id: 'place_city_large',
+      id: 'label_city_large',
       type: 'symbol',
       source: 'openmaptiles',
       'source-layer': 'place',
@@ -182,7 +182,7 @@ export default function layers(lang: string): LayerSpecificationWithZIndex[] {
     },
     {
       zorder: 111,
-      id: 'place_state',
+      id: 'label_state',
       type: 'symbol',
       source: 'openmaptiles',
       'source-layer': 'place',
@@ -204,7 +204,7 @@ export default function layers(lang: string): LayerSpecificationWithZIndex[] {
     },
     {
       zorder: 112,
-      id: 'place_country_other',
+      id: 'label_country_other',
       type: 'symbol',
       source: 'openmaptiles',
       'source-layer': 'place',
@@ -223,7 +223,7 @@ export default function layers(lang: string): LayerSpecificationWithZIndex[] {
     },
     {
       zorder: 113,
-      id: 'place_country_minor',
+      id: 'label_country_minor',
       type: 'symbol',
       source: 'openmaptiles',
       'source-layer': 'place',
@@ -247,7 +247,7 @@ export default function layers(lang: string): LayerSpecificationWithZIndex[] {
     },
     {
       zorder: 114,
-      id: 'place_country_major',
+      id: 'label_country_major',
       type: 'symbol',
       source: 'openmaptiles',
       'source-layer': 'place',
