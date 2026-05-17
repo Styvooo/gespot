@@ -624,6 +624,24 @@ export default function layers(): LayerSpecificationWithZIndex[] {
       }
     },
     {
+      zorder: 266,
+      id: 'power_pole_transition',
+      type: 'symbol',
+      filter: all(utilityPower_p, ['==', ['get', 'type'], 'pole'], has('transition')),
+      source: 'gespot',
+      'source-layer': 'power_tower',
+      minzoom: 14,
+      layout: {
+        'icon-image': 'power_pole_transition',
+        'icon-offset': literal([0, 20]),
+        'icon-size': interpolate(zoom, [
+          [14, 0.3],
+          [20, 1]
+        ]),
+        'icon-allow-overlap': true
+      }
+    },
+    {
       zorder: 265,
       id: 'power_switch',
       type: 'symbol',

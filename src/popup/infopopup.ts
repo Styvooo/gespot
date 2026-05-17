@@ -247,7 +247,7 @@ class InfoPopup {
     setChildren(attrs_table, renderedProperties)
 
     const content = el('div.oim-popup-content', this.nameTags(feature))
-    const mainrow = el('div.row')
+    const mainrow = el('div')
 
     if (feature.properties['voltage'] || feature.properties['voltage_primary']) {
       mount(content, this.voltageField(feature))
@@ -262,9 +262,9 @@ class InfoPopup {
       feature_iconpath = this.designIcon(featureRef+'_'+feature.properties['line_attachment']+'_'+feature.properties['line_arrangement'])
     }
     if (feature_iconpath != null) {
-      mount(mainrow, el('div.designicon', el('img', { src: feature_iconpath })))
+      mount(mainrow, el('div.d-inline-block.designicon', el('img', { src: feature_iconpath })))
     }else if(featureRef == "power_tower"){
-      let teaser = el('div.designteaser');
+      let teaser = el('div.d-inline-block.designteaser');
       mount(teaser, el('h6', 'Le matériau ou la silhouette de ce support sont encore inconnus'))
       mount(teaser, el('span', 'Envie de contribuer ?'))
       mount(teaser, el('br'))
@@ -275,7 +275,7 @@ class InfoPopup {
       mount(mainrow, teaser);
     }
 
-    const maincontent = el(`div`)
+    const maincontent = el(`div.d-inline-block`)
     mount(maincontent, attrs_table);
     mount(mainrow, maincontent);
 
