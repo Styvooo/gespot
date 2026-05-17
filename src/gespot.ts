@@ -1,6 +1,7 @@
 import maplibregl from 'maplibre-gl'
 import { t } from 'i18next'
 import { el, mount, text } from 'redom'
+import { titleCase } from 'title-case'
 
 import { LayerSwitcher, URLHash, Layer, LayerGroup } from '@russss/maplibregl-layer-switcher'
 
@@ -145,8 +146,9 @@ export default class Gespot {
         el('div#panel_hazardLink.d-inline-block.mr-3.align-text-top.text-left', [
           el('img', {"src":"img/iso_7010_w012.svg", "height":25}),
           el('a.text-danger', {"data-toggle":"modal", "data-target":"#electricityModal"}, 
-            text("Prévention du risque électrique"))
-        ]), 
+            text(titleCase(t('hazard.electric.prevent', 'electric hazard prevention'), {sentenceCase: true}))
+          ),
+      ]),
         el('div.d-inline-block.align-text-top',hazardArea_slider)
     ]));
 

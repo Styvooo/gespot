@@ -2,7 +2,7 @@ import './hazard-popup.css'
 import { OSMRemoteControl } from '../remote-control'
 import i18next, { t } from 'i18next'
 import { Marked } from '@ts-stack/markdown'
-import { el, setChildren, mount } from 'redom'
+import { el, setChildren, text, mount } from 'redom'
 import { titleCase } from 'title-case'
 import maplibregl, { LngLat, MapGeoJSONFeature } from 'maplibre-gl'
 import InfoPopup from './infopopup'
@@ -23,7 +23,7 @@ export class HazardPopup extends InfoPopup {
     const content = el('div.oim-popup-content', this.nameTags(feature))
 
     // Header
-    const hazard_title = titleCase(t('names.power.line-hazard', 'electric danger zone'), {sentenceCase: true})
+    const hazard_title = titleCase(t('hazard.electric.area', 'electric danger zone'), {sentenceCase: true})
     const header = el('div.oim-popup-header', el('h3', [el('img', { src: "img/iso_7010_w012.svg", height: 35 }), hazard_title]));
     mount(content, header);
 
@@ -62,7 +62,10 @@ export class HazardPopup extends InfoPopup {
     mount(footer, links_container)
     mount(
       footer,
-      el('a.oim-button', t('more_info', 'Prévention du risque électrique'), {"data-toggle":"modal", "data-target":"#electricityModal"})
+      el('a.oim-button', 
+        text(titleCase(t('hazard.electric.prevent', 'electric hazard prevention'), {sentenceCase: true})), 
+        {"data-toggle":"modal", "data-target":"#electricityModal"}
+      )
     )
 
     mount(content, footer)
@@ -87,3 +90,5 @@ export class HazardPopup extends InfoPopup {
       .addClassName('oim-popup-hazard')
   }
 }
+
+export { HazardPopup as default }

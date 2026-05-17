@@ -185,6 +185,12 @@
     "vegetation": "Vegetation",
     "title": "Layers"
   },
+  "hazard":{
+    "electric":{
+      "prevent": "electric hazard prevention",
+      "area": "electric hazard zone"
+    }
+  },
   "coordinates": "Coordinates",
   "search": {
     "clear": "Clear search",

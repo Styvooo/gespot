@@ -185,6 +185,12 @@
     "vegetation": "Végétation",
     "title": "Couches"
   },
+  "hazard":{
+    "electric":{
+      "prevent": "prévention du risque électrique",
+      "area": "zone de risque électrique"
+    }
+  },
   "coordinates": "Coordonnées",
   "search": {
         "clear": "Vider la recherche",
