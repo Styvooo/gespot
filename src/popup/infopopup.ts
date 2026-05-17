@@ -262,9 +262,9 @@ class InfoPopup {
       feature_iconpath = this.designIcon(featureRef+'_'+feature.properties['line_attachment']+'_'+feature.properties['line_arrangement'])
     }
     if (feature_iconpath != null) {
-      mount(mainrow, el('div.d-inline-block.designicon', el('img', { src: feature_iconpath })))
+      mount(mainrow, el('div.d-inline-block.mr-2.align-text-top.designicon', el('img', { src: feature_iconpath })))
     }else if(featureRef == "power_tower"){
-      let teaser = el('div.d-inline-block.designteaser');
+      let teaser = el('div.d-inline-block.mr-2.align-text-top.designteaser');
       mount(teaser, el('h6', 'Le matériau ou la silhouette de ce support sont encore inconnus'))
       mount(teaser, el('span', 'Envie de contribuer ?'))
       mount(teaser, el('br'))
@@ -275,7 +275,7 @@ class InfoPopup {
       mount(mainrow, teaser);
     }
 
-    const maincontent = el(`div.d-inline-block`)
+    const maincontent = el(`div.d-inline-block.align-text-top`)
     mount(maincontent, attrs_table);
     mount(mainrow, maincontent);
 

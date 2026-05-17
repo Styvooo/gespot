@@ -627,13 +627,13 @@ export default function layers(): LayerSpecificationWithZIndex[] {
       zorder: 266,
       id: 'power_pole_transition',
       type: 'symbol',
-      filter: all(utilityPower_p, ['==', ['get', 'type'], 'pole'], has('transition')),
+      filter: all(utilityPower_p, ['==', ['get', 'type'], 'pole'], get('transition')),
       source: 'gespot',
       'source-layer': 'power_tower',
       minzoom: 14,
       layout: {
         'icon-image': 'power_pole_transition',
-        'icon-offset': literal([0, 20]),
+        'icon-offset': literal([20, 0]),
         'icon-size': interpolate(zoom, [
           [14, 0.3],
           [20, 1]
