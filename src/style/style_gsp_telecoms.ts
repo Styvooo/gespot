@@ -79,7 +79,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
   },
   {
         zorder: 267,
-        id: 'power_pole_transition',
+        id: 'telecoms_pole_transition',
         type: 'symbol',
         filter: all(utilityTelecom_p, ['==', ['get', 'type'], 'pole'], get('transition')),
         source: 'gespot',
