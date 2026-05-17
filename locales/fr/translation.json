@@ -7,33 +7,34 @@
   },
   "names": {
     "power": {
-      "transformer": "Transformateur",
-      "tower": "Pylône électrique",
-      "pole": "Poteau électrique",
-      "termainal": "Ancrage électrique",
-      "substation": "Poste électrique",
-      "cable": "Câble électrique",
-      "line": "Power line",
-      "line-warning": "Danger électrique",
+      "transformer": "transformateur",
+      "tower": "pylône électrique",
+      "pole": "poteau électrique",
+      "termainal": "ancrage électrique",
+      "substation": "poste électrique",
+      "cable": "câble électrique",
+      "line": "ligne électrique",
+      "line-warning": "danger électrique",
       "hvdc": "HVDC",
-      "line-reference": "Référence",
-      "tower-pylon": "Tour/Pylône",
-      "tower-transition": "Pylône d'émergence",
-      "pole-transition": "Poteau d'émergence",
-      "pole-transformer": "Poste sur poteau",
-      "pole-switch": "Interrupteur sur poteau"
+      "line-reference": "référence",
+      "tower-transition": "émergence syr pylône",
+      "pole-transition": "émergence sur poteau",
+      "pole-transformer": "poste sur poteau",
+      "pole-switch": "organe de coupure"
     },
     "telecom": {
-      "pole": "Poteau télécom",
-      "line": "Artère télécom",
-      "tower-mast": "Pylône/mat"
+      "pole": "poteau télécom",
+      "line": "artère télécom",
+      "tower-mast": "pylône/mat radio"
     },
     "natural": {
-      "vegetation":"Végétation"
+      "vegetation":"végétation"
     },
-    "cable": "Câble",
-    "cabinet": "Armoire",
-    "place": "Lieu"
+    "cable": "câble",
+    "pole": "poteau",
+    "tower": "pylône",
+    "cabinet": "armoire",
+    "place": "lieu"
   },
   "info": {
     "name": "nom",
@@ -54,6 +55,7 @@
     "design-ref": "silhouette",
     "material": "matériau",
     "height": "hauteur",
+    "switch": "organe",
     "line-attachment": "armement",
     "line-management": "topologie",
     "line-arrangement": "arrangement",
@@ -94,9 +96,15 @@
     "substation": {
       "transmission": "transport",
       "distribution": "distribution",
+      "generation": "production",
       "minor_distribution": "quartier",
       "traction": "traction",
       "converter": "conversion DC"
+    },
+    "switch":{
+      "disconnector": "sectionneur",
+      "mechanical": "interrupteur",
+      "circuit_breaker": "disjoncteur"
     },
     "telecom-medium":{
       "copper": "cuivre",

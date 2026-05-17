@@ -7,33 +7,34 @@
   },
   "names": {
     "power": {
-      "transformer": "Transformer",
-      "tower": "Power tower",
-      "pole": "Power pole",
-      "termainal": "Power terminal",
-      "substation": "Substation",
-      "cable": "Power cable",
-      "line": "Power line",
-      "line-warning": "Danger zone",
+      "transformer": "transformer",
+      "tower": "power tower",
+      "pole": "power pole",
+      "termainal": "power terminal",
+      "substation": "substation",
+      "cable": "power cable",
+      "line": "power line",
+      "line-warning": "danger zone",
       "hvdc": "HVDC",
-      "line-reference": "Line reference",
-      "tower-pylon": "Tower/Pylon",
-      "tower-transition": "Transition tower",
-      "pole-transition": "Transition pole",
-      "pole-transformer": "Transformer on pole",
-      "pole-switch": "Switch on pole"
+      "line-reference": "line reference",
+      "tower-transition": "transition on tower",
+      "pole-transition": "transition on pole",
+      "pole-transformer": "transformer on pole",
+      "pole-switch": "switch on pole"
     },
     "telecom": {
-      "pole": "Telecom pole",
-      "line": "Telecom line",
-      "tower-mast": "Tower/Mast"
+      "pole": "telecom pole",
+      "line": "telecom line",
+      "tower-mast": "radio tower/mast"
     },
     "natural": {
-      "vegetation":"Végétation"
+      "vegetation":"végétation"
     },
-    "cable": "Cable",
-    "cabinet": "Cabinet",
-    "place": "Place"
+    "cable": "cable",
+    "pole": "pole",
+    "tower": "tower",
+    "cabinet": "cabinet",
+    "place": "place"
   },
   "info": {
     "name": "name",
@@ -54,6 +55,7 @@
     "design-ref": "shape",
     "material": "material",
     "height": "height",
+    "switch": "switch",
     "line-attachment": "line attachment",
     "line-management": "line management",
     "line-arrangement": "line arrangement",
@@ -94,9 +96,15 @@
     "substation": {
       "transmission": "transmission",
       "distribution": "distribution",
+      "generation": "generation",
       "minor_distribution": "minor distribution",
       "traction": "traction",
       "converter": "DC converter"
+    },
+    "switch":{
+      "disconnector": "disconnector",
+      "mechanical": "mechanical",
+      "circuit_breaker": "circuit breaker"
     },
     "telecom-medium":{
       "copper": "copper",

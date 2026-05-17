@@ -630,7 +630,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
       filter: all(utilityPower_p, ['==', ['get', 'type'], 'pole'], get('transition')),
       source: 'gespot',
       'source-layer': 'power_tower',
-      minzoom: 14,
+      minzoom: 14.5,
       layout: {
         'icon-image': 'power_pole_transition',
         'icon-offset': literal([-20, 0]),
@@ -737,7 +737,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
       layout: {
         'icon-image': 'power_terminal',
         'icon-allow-overlap': true,
-        'icon-size': 0.5
+        'icon-size': 10
       }
     },
     {

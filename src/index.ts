@@ -9,7 +9,7 @@ import Gespot from './gespot'
 
 await i18next.use(LanguageDetector).init({
   fallbackLng: {
-    default: ['fr']
+    default: ['en']
   },
   supportedLngs: [
     'en',

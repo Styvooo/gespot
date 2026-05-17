@@ -110,12 +110,12 @@ class KeyControl implements IControl {
   // Infrastructure
   async supportsTable() {
     const rows = [
-      [t('names.power.tower-pylon', 'Tower/Pylon'), await this.sprite('power_tower', 15)],
+      [t('names.tower', 'Tower/Pylon'), await this.sprite('power_tower', 15)],
       [
         t('names.power.tower-transition', 'Transition tower'),
         await this.sprite('power_tower_transition', 15)
       ],
-      [t('names.power.pole'), await this.sprite('pole', 15)],
+      [t('names.pole'), await this.sprite('pole', 15)],
       [t('names.power.pole-transition', 'Transition pole'), await this.sprite('power_pole_transition', 10)]
     ];
     
