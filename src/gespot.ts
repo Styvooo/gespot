@@ -10,12 +10,13 @@ import 'bootstrap-slider';
 
 import EditButton from './edit-control.js'
 import InfoPopup from './popup/infopopup.js'
+import HazardPopup from './popup/hazard-popup.js'
 import KeyControl from './key/key.js'
 import WarningBox from './warning-box/warning-box.js'
 import OIMSearch from './search/search.ts'
 
 import { getStyle, getLayers } from './style/style.js'
-import {warning_scale, warningWidth} from './style/style_gsp_power.ts';
+import {hazard_scale, hazardWidth} from './style/style_gsp_power.ts';
 
 import { ValidationErrorPopup } from './popup/validation-error-popup.js'
 import { SymbolLoader } from './symbol-loader.ts'
@@ -118,12 +119,15 @@ export default class Gespot {
       getLayers().map((layer: { [x: string]: any }) => layer['id']),
       6
     ).add(map, clickRouter)
+    new HazardPopup(
+      10
+    ).add(map, clickRouter)
     //new ValidationErrorPopup(map, clickRouter)
 
     clickRouter.register()
     this.map = map
 
-    let warningArea_slider = el('input#panel_warningSlider', {
+    let hazardArea_slider = el('input#panel_hazardSlider', {
       "type":"text",
       "data-provide":"slider",
       "data-slider-ticks":'[0, 1, 2, 3, 4]',
@@ -137,39 +141,40 @@ export default class Gespot {
     });
 
     document.getElementsByTagName("header")[0].insertAdjacentElement("beforeend", 
-      el('div#panel_warning.mx-2.pt-1.pb-1.float-right.text-center.rounded-lg.alert-secondary', [
-        el('div#panel_warningLink.d-inline-block.mr-3.align-text-top.text-left', [
+      el('div#panel_hazard.mx-2.pt-1.pb-1.float-right.text-center.rounded-lg.alert-secondary', [
+        el('div#panel_hazardLink.d-inline-block.mr-3.align-text-top.text-left', [
           el('img', {"src":"img/iso_7010_w012.svg", "height":25}),
           el('a.text-danger', {"data-toggle":"modal", "data-target":"#electricityModal"}, 
             text("Prévention du risque électrique"))
         ]), 
-        el('div.d-inline-block.align-text-top',warningArea_slider)
+        el('div.d-inline-block.align-text-top',hazardArea_slider)
     ]));
 
-    $("#panel_warningSlider").slider().on("slideStop", function(ui: any){
+    $("#panel_hazardSlider").slider().on("slideStop", function(ui: any){
+      let layerName = "power_line_hazard";
       switch(ui.value){
         case 1:
-          map.setPaintProperty("power_line_warning", "line-color", warning_scale["DMA"]);
-          map.setPaintProperty("power_line_warning", "line-width", warningWidth("DMA"));
-          map.setLayoutProperty("power_line_warning", 'visibility', 'visible');
+          map.setPaintProperty(layerName, "line-color", hazard_scale["DMA"]);
+          map.setPaintProperty(layerName, "line-width", hazardWidth("DMA"));
+          map.setLayoutProperty(layerName, 'visibility', 'visible');
           break;
         case 2:
-          map.setPaintProperty("power_line_warning", "line-color", warning_scale["DLVR"]);
-          map.setPaintProperty("power_line_warning", "line-width", warningWidth("DLVR"));
-          map.setLayoutProperty("power_line_warning", 'visibility', 'visible');
+          map.setPaintProperty(layerName, "line-color", hazard_scale["DLVR"]);
+          map.setPaintProperty(layerName, "line-width", hazardWidth("DLVR"));
+          map.setLayoutProperty(layerName, 'visibility', 'visible');
           break;
         case 3:
-          map.setPaintProperty("power_line_warning", "line-color", warning_scale["DLVS"]);
-          map.setPaintProperty("power_line_warning", "line-width", warningWidth("DLVS"));
-          map.setLayoutProperty("power_line_warning", 'visibility', 'visible');
+          map.setPaintProperty(layerName, "line-color", hazard_scale["DLVS"]);
+          map.setPaintProperty(layerName, "line-width", hazardWidth("DLVS"));
+          map.setLayoutProperty(layerName, 'visibility', 'visible');
           break;
         case 4:
-          map.setPaintProperty("power_line_warning", "line-color", warning_scale["DLI"]);
-          map.setPaintProperty("power_line_warning", "line-width", warningWidth("DLI"));
-          map.setLayoutProperty("power_line_warning", 'visibility', 'visible');
+          map.setPaintProperty(layerName, "line-color", hazard_scale["DLI"]);
+          map.setPaintProperty(layerName, "line-width", hazardWidth("DLI"));
+          map.setLayoutProperty(layerName, 'visibility', 'visible');
           break;
         default:
-          map.setLayoutProperty("power_line_warning", 'visibility', 'none');
+          map.setLayoutProperty(layerName, 'visibility', 'none');
           break;
       }
     })

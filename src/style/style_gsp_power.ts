@@ -55,7 +55,7 @@ export const special_voltages = {
   traction: '#A8B596'
 }
 
-export const warning_scale = {
+export const hazard_scale = {
   "DMA":"#DD0000",
   "DLVR":"#ffc107",
   "DLVS":"#ffc107",
@@ -262,10 +262,10 @@ const power_opacity: ExpressionSpecification = interpolate(zoom, [
   [8, case_([[construction_p, 0.3]], 1)]
 ])
 
-export const warningWidth = function (warning: string): ExpressionSpecification{
+export const hazardWidth = function (hazard: string): ExpressionSpecification{
   let widthFunc: DataDrivenPropertyValueSpecification<number> = ['case',true,50,50];
   
-  switch(warning){
+  switch(hazard){
     case "DMA":
       widthFunc = ['case',
       insulated_p,
@@ -419,15 +419,15 @@ export default function layers(): LayerSpecificationWithZIndex[] {
   return [
     {
       zorder: 200,
-      id: 'power_line_warning',
+      id: 'power_line_hazard',
       type: 'line',
       source: 'gespot',
       'source-layer': 'power_line',
       filter: power_visible_p,
       minzoom: 10,
       paint: {
-        'line-color': warning_scale["DMA"],
-        'line-width': warningWidth("DMA"),
+        'line-color': hazard_scale["DMA"],
+        'line-width': hazardWidth("DMA"),
         'line-opacity': 0.25,
       },
       layout: {

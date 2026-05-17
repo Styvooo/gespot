@@ -14,7 +14,7 @@
       "substation": "substation",
       "cable": "power cable",
       "line": "power line",
-      "line-warning": "danger zone",
+      "line-hazard": "electric hazard zone",
       "hvdc": "HVDC",
       "line-reference": "line reference",
       "tower-transition": "transition on tower",

@@ -14,7 +14,7 @@
       "substation": "poste électrique",
       "cable": "câble électrique",
       "line": "ligne électrique",
-      "line-warning": "danger électrique",
+      "line-hazard": "danger électrique",
       "hvdc": "HVDC",
       "line-reference": "référence",
       "tower-transition": "émergence sur pylône",

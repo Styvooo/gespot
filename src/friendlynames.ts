@@ -15,7 +15,7 @@ export default function friendlyNames(): { [key: string]: string } {
     power_substation_point: t('names.power.substation','power substation'),
     power_line: t('names.power.line', 'power line'),
     power_line_label: t('names.power.line', 'power line'),
-    power_line_warning: t('names.power.line-warning', 'danger zone'),
+    power_line_hazard: t('names.power.line-hazard', 'danger zone'),
     telecoms_line: t('names.telecom.line', 'telecom line'),
     telecoms_line_label: t('names.telecom.line', 'telecom line'),
     telecoms_mast: t('names.telecom.mast', 'telecom mast'),

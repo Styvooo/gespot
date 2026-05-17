@@ -304,15 +304,6 @@ class InfoPopup {
     mount(content, footer)
     mount(footer, links_container)
 
-    if (feature.layer.id.startsWith('power_plant')) {
-      mount(
-        footer,
-        el('a.oim-button', t('more_info', 'More info'), {
-          href: '/stats/object/plant/' + feature.properties['osm_id'],
-          target: '_blank'
-        })
-      )
-    }
     return content
   }
 

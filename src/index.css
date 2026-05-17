@@ -21,6 +21,7 @@
   --oim-radius-small: 3px;
 
   --oim-popup-header-info-background: #e0f6f6;
+  --oim-popup-header-hazard-background: #efbfc4;
   --oim-popup-header-validation-background: #f9e2e4;
 
   --oim-drop-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
@@ -239,10 +240,10 @@ header h1 {
 	background: #81bfde !important;
 }
 
-#panel_warning {
+#panel_hazard {
   width: 360px;
 }
-#panel_warningLink {
+#panel_hazardLink {
   max-width: 110px;
 }
 
