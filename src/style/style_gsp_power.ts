@@ -614,8 +614,8 @@ export default function layers(): LayerSpecificationWithZIndex[] {
           ],
           'power_switch'
         ),
-        'icon-rotate': 270,
-        'icon-offset': match(get('type'), [['tower', literal([0, -30])]], literal([0, -20])),
+        'icon-rotate': 90,
+        'icon-offset': match(get('type'), [['tower', literal([0, 30])]], literal([0, 20])),
         'icon-size': interpolate(zoom, [
           [14, 0.3],
           [20, 1]
@@ -633,7 +633,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
       minzoom: 14,
       layout: {
         'icon-image': 'power_pole_transition',
-        'icon-offset': literal([20, 0]),
+        'icon-offset': literal([-20, 0]),
         'icon-size': interpolate(zoom, [
           [14, 0.3],
           [20, 1]

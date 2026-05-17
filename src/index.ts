@@ -37,6 +37,7 @@ export const gespot = new Gespot()
 
 if (document.readyState != 'loading') {
   gespot.init()
+  $('#disclaimerModal').modal('show');
 } else {
   document.addEventListener('DOMContentLoaded', gespot.init)
 }
