@@ -642,37 +642,6 @@ export default function layers(): LayerSpecificationWithZIndex[] {
       }
     },
     {
-      zorder: 265,
-      id: 'power_switch',
-      type: 'symbol',
-      source: 'gespot',
-      'source-layer': 'power_switch',
-      minzoom: 15,
-      paint: text_paint,
-      layout: {
-        'icon-image': match(
-          get('type'),
-          [
-            ['disconnector', 'power_switch_disconnector'],
-            ['mechanical', 'power_switch'],
-            ['circuit_breaker', 'power_switch_circuit_breaker']
-          ],
-          'power_switch'
-        ),
-        'icon-rotate': ['-', ['get', 'angle'], 90],
-        'icon-offset': [0, 0],
-        'icon-size': interpolate(
-          zoom,
-          [
-            [15, 0.4],
-            [20, 1]
-          ],
-          1.2
-        ),
-        'icon-allow-overlap': true
-      }
-    },
-    {
       zorder: 268,
       id: 'power_substation_point',
       type: 'circle',

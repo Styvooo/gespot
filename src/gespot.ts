@@ -25,6 +25,7 @@ import { ClickRouter } from './click-router.js'
 
 export default class Gespot {
   map?: maplibregl.Map
+  hazardElectric_status: String | null
 
   isWebglSupported() {
     if (window.WebGLRenderingContext) {
@@ -51,6 +52,7 @@ export default class Gespot {
       infobox.update(t('warnings.webgl'))
       mount(document.body, infobox)
     }
+    this.hazardElectric_status = null;
 
     maplibregl.setRTLTextPlugin(
       'https://unpkg.com/@mapbox/mapbox-gl-rtl-text@0.2.3/mapbox-gl-rtl-text.min.js',
@@ -120,7 +122,7 @@ export default class Gespot {
       getLayers().map((layer: { [x: string]: any }) => layer['id']),
       6
     ).add(map, clickRouter)
-    new HazardPopup(
+    new HazardPopup(this,
       10
     ).add(map, clickRouter)
     //new ValidationErrorPopup(map, clickRouter)

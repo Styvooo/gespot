@@ -6,13 +6,18 @@ import { el, setChildren, text, mount } from 'redom'
 import { titleCase } from 'title-case'
 import maplibregl, { LngLat, MapGeoJSONFeature } from 'maplibre-gl'
 import InfoPopup from './infopopup'
+import { default as Gespot } from '../gespot.ts'
 
 export class HazardPopup extends InfoPopup {
-  constructor(min_zoom: number) {
+  app: Gespot
+
+  constructor(app: Gespot, min_zoom: number) {
     super(['power_line_hazard'], min_zoom);
+
+    this.app = app;
   }
 
-  popup_content(feature: MapGeoJSONFeature) {
+  async popupHtml(feature: MapGeoJSONFeature) {
     const attrs_table = el('table', { class: 'item_info' })
     const renderedProperties = Object.keys(feature.properties)
       .sort()
@@ -35,7 +40,7 @@ export class HazardPopup extends InfoPopup {
     }
 
     let hazardMsg = el('div.d-inline-block.mr-2.align-text-top.hazardMessage');
-    mount(hazardMsg, el('h6', 'Vous avez sélectionné une zone de risque électrique'))
+    mount(hazardMsg, el('h6',`Vous avez sélectionné une zone de risque électrique : ${this.app.hazardElectric_status}`))
     mount(hazardMsg, el('span', 'Ces zones sont établies selon des distances normalisées.'))
     mount(mainrow, hazardMsg);
 
