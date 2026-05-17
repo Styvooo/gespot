@@ -85,7 +85,7 @@
       "metal": "steel",
       "steel": "steel",
       "concrete": "concrete",
-      "composite": "epoxy",
+      "composite": "composite",
       "epoxy": "epoxy"
     },
     "substation": {

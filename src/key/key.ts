@@ -1,10 +1,11 @@
 import { IControl } from 'maplibre-gl'
 import { t } from 'i18next'
 import { el, mount, list, setStyle, RedomElement } from 'redom'
-import {materialColor_scale} from '../style/common.ts'
+import { titleCase } from 'title-case'
+import { materialColor_scale } from '../style/common.ts'
 import { default as power_layers, voltage_scale, special_voltages } from '../style/style_gsp_power.ts'
-import {mediumColor_scale as telecoMedium_scale} from '../style/style_gsp_telecoms.js'
-import {default as natural_layers} from '../style/style_gsp_natural.js'
+import { mediumColor_scale as telecoMedium_scale } from '../style/style_gsp_telecoms.js'
+import { default as natural_layers } from '../style/style_gsp_natural.js'
 
 import { svgLine, svgCircle, svgLineFromLayer, svgRectFromLayer } from './svg.js'
 import './key.css'
@@ -108,25 +109,26 @@ class KeyControl implements IControl {
 
   // Infrastructure
   async supportsTable() {
-    const rows = [];
+    const rows = [
+      [t('names.power.tower-pylon', 'Tower/Pylon'), await this.sprite('power_tower', 15)],
+      [
+        t('names.power.tower-transition', 'Transition tower'),
+        await this.sprite('power_tower_transition', 15)
+      ],
+      [t('names.power.pole'), await this.sprite('pole', 15)],
+      [t('names.power.pole-transition', 'Transition pole'), await this.sprite('power_pole_transition', 10)]
+    ];
+    
     for (const row of materialColor_scale) {
       let label = row[0]?.toString()
       if (!label) {
         label = t('undefined', 'Unknown')
       } else {
-        label = t('values.material.'+label, label)
+        label = titleCase(t('values.material.'+label, label))
       }
 
       rows.push([label, svgCircle(row[1], 'grey', 1, 8, 0)])
     }
-
-    rows.push([t('names.power.tower-pylon', 'Tower/Pylon'), await this.sprite('power_tower', 10)]);
-    rows.push([
-      t('names.power.tower-transition', 'Transition tower'),
-      await this.sprite('power_tower_transition', 10)
-    ]);
-    rows.push([t('names.power.pole'), await this.sprite('pole', 8)]);
-    rows.push([t('names.power.pole-transition', 'Transition pole'), await this.sprite('power_pole_transition', 8)]);
 
     const table = list('table', Tr)
     table.update(rows)
@@ -136,7 +138,7 @@ class KeyControl implements IControl {
   // Power
   async powerTable() {
     const rows = [
-      [t('names.power.pole', 'Power pole'), await this.sprite('power_pole', 10)]
+      [t('names.power.pole', 'Power pole'), await this.sprite('power_pole', 15)]
     ];
 
     const table = list('table', Tr)
@@ -169,7 +171,10 @@ class KeyControl implements IControl {
 
   // Telecoms
   async telecomTable() {
-    const rows = [];
+    const rows = [
+      [t('names.telecom.pole', 'Telecom pole'), await this.sprite('telecom_pole', 15)],
+      [t('names.telecom.tower-mast', 'Tower/mast'), await this.sprite('comms_tower')]
+    ];
 
     for (const row of telecoMedium_scale) {
       let label = row[0]?.toString()
@@ -177,14 +182,11 @@ class KeyControl implements IControl {
       if (!label) {
         label = t('undefined', 'Indéfini')
       } else {
-        label = t('values.telecom:medium.'+label, label)
+        label = titleCase(t('values.telecom:medium.'+label, label))
       }
 
       rows.push([label, svgLine(row[1], 2, '6 3')])
     }
-    
-    rows.push([t('names.telecom.pole', 'Telecom pole'), await this.sprite('telecom_pole')]);
-    rows.push([t('names.telecom.tower-mast', 'Tower/mast'), await this.sprite('comms_tower')]);
 
     const table = list('table', Tr)
     table.update(rows)

@@ -83,9 +83,10 @@ export default class Gespot {
       url_hash.init({
         container: 'map',
         style: map_style,
-        maxZoom: 20,
-        zoom: 2,
-        center: [12, 26],
+        minZoom: 2,
+        maxZoom: 21.5,
+        zoom:4.9,
+        center: [2.727, 46.125],
         localIdeographFontFamily: "'Apple LiSung', 'Noto Sans', 'Noto Sans CJK SC', sans-serif"
       })
     )
@@ -117,7 +118,7 @@ export default class Gespot {
       getLayers().map((layer: { [x: string]: any }) => layer['id']),
       6
     ).add(map, clickRouter)
-    new ValidationErrorPopup(map, clickRouter)
+    //new ValidationErrorPopup(map, clickRouter)
 
     clickRouter.register()
     this.map = map

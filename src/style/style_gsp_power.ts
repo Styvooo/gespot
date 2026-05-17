@@ -609,7 +609,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
           get('switch'),
           [
             ['disconnector', 'power_switch_disconnector'],
-            ['mechanical', 'power_switch_disconnector'],
+            ['mechanical', 'power_switch'],
             ['circuit_breaker', 'power_switch_circuit_breaker']
           ],
           'power_switch'
@@ -636,6 +636,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
           get('type'),
           [
             ['disconnector', 'power_switch_disconnector'],
+            ['mechanical', 'power_switch'],
             ['circuit_breaker', 'power_switch_circuit_breaker']
           ],
           'power_switch'
@@ -775,6 +776,27 @@ export default function layers(): LayerSpecificationWithZIndex[] {
             14, 0.5,
             17, 3
         ]
+      }
+    },
+    {
+      zorder:520,
+      id: 'power_pole_label',
+      type: 'symbol',
+      source: 'gespot',
+      filter: [
+        'all',
+        utilityPower_p,
+        ['==', ['get', 'type'], 'pole']
+      ],
+      minzoom: 14.5,
+      'source-layer': 'power_tower',
+      paint: powerTextPaint,
+      layout: {
+        'text-field': '{ref}',
+        'text-font':font,
+        'text-size': ['interpolate', ['linear'], ['zoom'], 11, 0, 12, 0, 12.01, 10],
+        'text-offset': [0, 1],
+        'text-anchor': 'top',
       }
     },
     {
@@ -920,45 +942,6 @@ export default function layers(): LayerSpecificationWithZIndex[] {
         'text-offset': [0, -1]
       },
       paint: text_paint
-    },
-    {
-      zorder: 562,
-      id: 'power_converter_point',
-      type: 'symbol',
-      filter: all(converter_p, substation_point_visible_p),
-      source: 'gespot',
-      'source-layer': 'power_substation_point',
-      minzoom: 5.5,
-      layout: {
-        'icon-image': 'converter',
-        'icon-size': interpolate(zoom, [
-          [5, 0.2],
-          [13, 0.8]
-        ]),
-        'text-field': substation_label,
-        'text-font': font,
-        'text-variable-anchor': ['top', 'bottom'],
-        'text-radial-offset': interpolate(zoom, [
-          [5, 1.2],
-          [13, 1.6]
-        ]),
-        'text-size': interpolate(zoom, [
-          [7, 10],
-          [
-            18,
-            interpolate(output, [
-              [0, 10],
-              [2000, 16]
-            ])
-          ]
-        ]),
-        'text-optional': true
-      },
-      paint: {
-        ...text_paint,
-        'text-opacity': ['step', zoom, 0, 7, 1],
-        'icon-opacity': if_(construction_p, 0.5, 1)
-      }
     }
   ]
 }

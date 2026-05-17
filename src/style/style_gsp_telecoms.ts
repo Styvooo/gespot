@@ -84,7 +84,7 @@ export default function layers(): LayerSpecificationWithZIndex[] {
     source: 'gespot',
     filter: utilityTelecom_p,
     minzoom: 11,
-    maxzoom:14.5,
+    maxzoom: 14.5,
     'source-layer': 'utility_support',
     paint: {
       ...telecomTextPaint,
