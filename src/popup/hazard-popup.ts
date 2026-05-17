@@ -29,7 +29,7 @@ export class HazardPopup extends InfoPopup {
 
     // Header
     const hazard_title = titleCase(t('hazard.electric.area', 'electric danger zone'), {sentenceCase: true})
-    const header = el('div.oim-popup-header', el('h3', [el('img', { src: "img/iso_7010_w012.svg", height: 35 }), hazard_title]));
+    const header = el('div.oim-popup-header', el('h3', [el('img', { src: "img/iso_7010_w012.svg" }), hazard_title]));
     mount(content, header);
 
     // Content
@@ -39,23 +39,31 @@ export class HazardPopup extends InfoPopup {
       mount(content, this.voltageField(feature))
     }
 
-    let hazardMsg = el('div.d-inline-block.mr-2.align-text-top.hazardMessage');
-    mount(hazardMsg, el('h6','Vous avez sélectionné une zone de risque électrique'))
-
+    let hazardZone_label = el('span.font-weight-bold.text-secondary', "distance inconnue");
+    let hazardZone_message = el('p');
     switch (this.app.hazardElectric_status){
     case "DLI":
-      mount(hazardMsg, el('p', [el('span.font-weight-bold.text-danger', "DLI - Distance Limite d'Investigation"), el('span', "Elle est de 50 mètres autour d'un conducteur quelle que soit sa tension et vise à matérialiser la zone pour laquelle une étude des risques électriques est nécessaire.")]))
+      hazardZone_label = el('span.font-weight-bold.text-info', "Distance Limite d'Investigation");
+      hazardZone_message = el('p', "Elle est de 50 mètres autour d'un conducteur quelle que soit sa tension et vise à matérialiser la zone pour laquelle une étude des risques électriques est nécessaire.");
       break;
     case "DLVS":
-      mount(hazardMsg, el('p', [el('span.font-weight-bold.text-danger', "DLVS - Voisinage simple"), el('span', "Elle s'étale de 5 à 3 mètres selon le niveau de tension. Une habilitation est nécessaire pour s'approcher au-delà.")]))
+      hazardZone_label = el('span.font-weight-bold.text-info', "Distance Limite de Voisinage simple");
+      hazardZone_message = el('p', "Elle s'étale de 5 à 3 mètres selon le niveau de tension. Une habilitation est nécessaire pour s'approcher au-delà.");
       break;
     case "DLVR":
-      mount(hazardMsg, el('p', [el('span.font-weight-bold.text-danger', "DLVR - Voisinage renforcé"), el('span', "Elle s'étale de 4 mètres à 30 centimètres. Des protections adaptées sont nécessaires pour s'approcher au-delà.")]))
+      hazardZone_label = el('span.font-weight-bold.text-info', "Distance Limite de Voisinage Renforcé");
+      hazardZone_message = el('p', "Elle s'étale de 4 mètres à 30 centimètres. Des protections adaptées sont nécessaires pour s'approcher au-delà.");
       break;
     case "DMA":
-      mount(hazardMsg, el('p', [el('span.font-weight-bold.text-danger', "DMA - Distance minimale d'approche"), el('span', "Elle s'étale de 2.5 mètres à 30 centimètres. Des méthodes de travail spécifiques sont nécessaires au-delà.")]))
+      hazardZone_label = el('span.font-weight-bold.text-info', "Distance minimale d'approche");
+      hazardZone_message = el('p', "Elle s'étale de 2.5 mètres à 30 centimètres. Des méthodes de travail spécifiques sont nécessaires au-delà.");
       break;
     }
+
+    let hazardMsg = el('div.d-inline-block.mr-2.align-text-top.hazardMessage');
+    mount(hazardMsg, el('h6', ["Vous avez sélectionné une zone de risque électrique à l'intérieur de la ", hazardZone_label]));
+    mount(hazardMsg, hazardZone_message);
+    mount(hazardMsg, el('p', "L'affichage plan est donné à titre indicatif et extrapolé de la génératrice géométrique de l'ouvrage concerné sans garantie d'exactitude"));
     mount(mainrow, hazardMsg);
 
     const attrsContainer = el(`div.d-inline-block.align-text-top`)
