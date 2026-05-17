@@ -47,15 +47,15 @@ export class HazardPopup extends InfoPopup {
       hazardZone_message = el('p', "Elle est de 50 mètres autour d'un conducteur quelle que soit sa tension et vise à matérialiser la zone pour laquelle une étude des risques électriques est nécessaire.");
       break;
     case "DLVS":
-      hazardZone_label = el('span.font-weight-bold.text-info', "Distance Limite de Voisinage simple");
+      hazardZone_label = el('span.font-weight-bold.text-warning', "Distance Limite de Voisinage simple");
       hazardZone_message = el('p', "Elle s'étale de 5 à 3 mètres selon le niveau de tension. Une habilitation est nécessaire pour s'approcher au-delà.");
       break;
     case "DLVR":
-      hazardZone_label = el('span.font-weight-bold.text-info', "Distance Limite de Voisinage Renforcé");
+      hazardZone_label = el('span.font-weight-bold.text-warning', "Distance Limite de Voisinage Renforcé");
       hazardZone_message = el('p', "Elle s'étale de 4 mètres à 30 centimètres. Des protections adaptées sont nécessaires pour s'approcher au-delà.");
       break;
     case "DMA":
-      hazardZone_label = el('span.font-weight-bold.text-info', "Distance minimale d'approche");
+      hazardZone_label = el('span.font-weight-bold.text-danger', "Distance minimale d'approche");
       hazardZone_message = el('p', "Elle s'étale de 2.5 mètres à 30 centimètres. Des méthodes de travail spécifiques sont nécessaires au-delà.");
       break;
     }

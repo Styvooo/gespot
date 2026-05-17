@@ -147,6 +147,7 @@ export default class Gespot {
       "data-slider-tooltip":"hide",
       "data-slider-rangeHighlights":'[{ "start": 0, "end": 1, "class": "bg-danger" },{ "start": 1, "end": 3, "class": "bg-warning" },{ "start": 3, "end": 4, "class": "bg-info"}]'
     });
+    this.hazardElectric_status = "DMA";
 
     document.getElementsByTagName("header")[0].insertAdjacentElement("beforeend", 
       el('div#panel_hazard.mx-2.pt-1.pb-1.float-right.text-center.rounded-lg.alert-secondary', [
